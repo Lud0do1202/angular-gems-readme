@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
+import { MenuXConfig } from '@lud0do1202/angular-gems';
 
 @Component({
   selector: 'app-menu-x',
@@ -35,7 +35,7 @@ export class MenuXComponent {
   // Links
   linksLoaded: number = 0;
   linksConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
+    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
   };
   linksValue: string = 'html';
   linksHtml: string = `
@@ -43,7 +43,7 @@ export class MenuXComponent {
 
     <div style="text-align: center">
       <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Clients loaded</p>
+      <p *ngIf="loaded === 1">Component Customers loaded</p>
       <p *ngIf="loaded === 2">Component Stats loaded</p>
       <p *ngIf="loaded === 3">Component Settings loaded</p>
     </div>
@@ -52,18 +52,18 @@ export class MenuXComponent {
     import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
 
     export class MenuXComponent {
-        loaded: number = 0;
-        
-        configLinks: MenuXConfig = {
-          links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
-        };
-      }
+      loaded: number = 0;
+      
+      configLinks: MenuXConfig = {
+        links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
+      };
+    }
   `;
 
   // Default active
   defaultActiveLoaded: number = 3;
   defaultActiveConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
+    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
     activeLink: 3,
   };
   defaultActiveValue: string = 'html';
@@ -72,7 +72,7 @@ export class MenuXComponent {
 
     <div style="text-align: center">
       <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Clients loaded</p>
+      <p *ngIf="loaded === 1">Component Customers loaded</p>
       <p *ngIf="loaded === 2">Component Stats loaded</p>
       <p *ngIf="loaded === 3">Component Settings loaded</p>
     </div>
@@ -84,7 +84,7 @@ export class MenuXComponent {
         loaded: number = 3;
         
         config: MenuXConfig = {
-          links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
+          links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
           activeLink: 3, // MUST BE THE SAME AS this.loaded
         };
       }
@@ -93,7 +93,7 @@ export class MenuXComponent {
   // Style
   styleLoaded: number = 0;
   styleConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
+    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
     style: {
       fontSize: '1rem',
       bgColor: 'lightblue',
@@ -112,7 +112,7 @@ export class MenuXComponent {
 
     <div style="text-align: center">
       <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Clients loaded</p>
+      <p *ngIf="loaded === 1">Component Customers loaded</p>
       <p *ngIf="loaded === 2">Component Stats loaded</p>
       <p *ngIf="loaded === 3">Component Settings loaded</p>
     </div>
@@ -124,7 +124,7 @@ export class MenuXComponent {
       loaded: number = 0;
 
       config: MenuXConfig = {
-        links: [{ label: 'Members' }, { label: 'Clients' }, { label: 'Stats' }, { label: 'Settings' }],
+        links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
         style: {
           fontSize: '1rem', // Font size
           bgColor: 'lightblue', // Background color
@@ -144,7 +144,7 @@ export class MenuXComponent {
   styleLinksConfig: MenuXConfig = {
     links: [
       { label: 'Members', style: { activeBgColor: 'lightgreen' } },
-      { label: 'Clients' },
+      { label: 'Customers' },
       { label: 'Stats' },
       { label: 'Settings', style: { activeBgColor: 'orange', activeFontColor: 'yellow' } },
     ],
@@ -159,7 +159,7 @@ export class MenuXComponent {
 
     <div style="text-align: center">
       <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Clients loaded</p>
+      <p *ngIf="loaded === 1">Component Customers loaded</p>
       <p *ngIf="loaded === 2">Component Stats loaded</p>
       <p *ngIf="loaded === 3">Component Settings loaded</p>
     </div>
@@ -173,7 +173,7 @@ export class MenuXComponent {
       config: MenuXConfig = {
         links: [
           { label: 'Members', style: { activeBgColor: 'lightgreen' } }, // Default active font color
-          { label: 'Clients' }, // Default style
+          { label: 'Customers' }, // Default style
           { label: 'Stats' }, // Default style
           { label: 'Settings', style: { activeBgColor: 'orange', activeFontColor: 'yellow' } }, 
         ],

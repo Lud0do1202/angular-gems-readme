@@ -1,1 +1,37 @@
-<p>installation works!</p>
+<!-- Title -->
+<app-title [title]="title" [description]="description"></app-title>
+
+<!-- Download -->
+<app-section [title]="'Download'">
+  <app-description> Use <strong>npm</strong> to be able to use Angular Gems </app-description>
+  <app-code-area> {{ download }} </app-code-area>
+</app-section>
+
+<!-- App.module -->
+<app-section [title]="'App.module.ts'">
+  <app-description>
+    To use it you have to import the <strong>module</strong> that you want to use and then add the module in the
+    <strong>imports</strong>
+  </app-description>
+  <app-code-area> {{ appModule }} </app-code-area>
+</app-section>
+
+<!-- Component -->
+<app-section [title]="'Component'">
+  <app-description>
+    Use the adequate tag the implement the component and <strong>follow the documentation</strong>
+  </app-description>
+  <app-instance>
+    <gems-menu-x [config]="config" (linkClicked)="loaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="loaded === 0">Component Members loaded</p>
+      <p *ngIf="loaded === 1">Component Customers loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+  
+  <app-select-html-typescript (onChange)="value = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="value === 'html'"> {{ componentHtml }} </app-code-area>
+  <app-code-area *ngIf="value === 'ts'"> {{ componentTypescript }} </app-code-area>
+</app-section>

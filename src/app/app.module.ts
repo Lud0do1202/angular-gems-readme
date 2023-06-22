@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Clipboard
+import { ClipboardModule } from 'ngx-clipboard';
+
 // Prime NG
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { DividerModule } from 'primeng/divider';
@@ -60,6 +63,7 @@ import { InstallationComponent } from './pages/get-started/installation/installa
     TooltipModule,
     SelectButtonModule,
     MenuXModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
