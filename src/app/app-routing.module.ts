@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PageFoundComponent } from './pages/page-found/page-found.component';
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
 import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
+import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
 
 const routes: Routes = [
   // Default
@@ -23,6 +24,7 @@ const routes: Routes = [
 
       // More
       { path: 'more/donnation', component: DonnationPageComponent },
+      { path: 'more/repository', component: RepositoryPageComponent },
     ],
   },
 

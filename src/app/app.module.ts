@@ -39,6 +39,7 @@ import { SelectHtmlTypescriptComponent } from './components/select-html-typescri
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
 import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
 import { PaypalComponent } from './components/paypal/paypal.component';
+import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
     InstallationPageComponent,
     DonnationPageComponent,
     PaypalComponent,
+    RepositoryPageComponent,
   ],
   imports: [
     BrowserModule,

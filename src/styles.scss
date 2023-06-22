@@ -108,3 +108,13 @@ strong {
 .p-toast {
   opacity: 0.975;
 }
+
+// Link
+.link {
+  text-decoration: none;
+  color: var(--blue-600);
+  transition: 0.2s;
+  &:hover {
+    color: var(--blue-300);
+  }
+}
