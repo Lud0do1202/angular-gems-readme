@@ -19,8 +19,7 @@ import { MenuXModule } from '@lud0do1202/angular-gems';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
-import { MenuXComponent } from './pages/components/menu/menu-x/menu-x.component';
-import { MenuYIconsComponent } from './pages/components/menu/menu-y-icons/menu-y-icons.component';
+import { MenuXPageComponent } from './pages/components/menu/menu-x/menu-x-page.component';
 import { PageFoundComponent } from './pages/page-found/page-found.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { TitleComponent } from './components/title/title.component';
@@ -32,14 +31,14 @@ import { InstanceComponent } from './components/instance/instance.component';
 import { SpacerComponent } from './components/spacer/spacer.component';
 import { FormsModule } from '@angular/forms';
 import { SelectHtmlTypescriptComponent } from './components/select-html-typescript/select-html-typescript.component';
-import { InstallationComponent } from './pages/get-started/installation/installation.component';
+import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
+import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    MenuXComponent,
-    MenuYIconsComponent,
+    MenuXPageComponent,
     PageFoundComponent,
     PageNotFoundComponent,
     TitleComponent,
@@ -50,7 +49,8 @@ import { InstallationComponent } from './pages/get-started/installation/installa
     InstanceComponent,
     SpacerComponent,
     SelectHtmlTypescriptComponent,
-    InstallationComponent,
+    InstallationPageComponent,
+    DonnationPageComponent,
   ],
   imports: [
     BrowserModule,

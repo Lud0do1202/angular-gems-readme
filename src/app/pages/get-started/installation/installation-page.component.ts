@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { MenuXConfig } from '@lud0do1202/angular-gems';
 
 @Component({
-  selector: 'app-installation',
-  templateUrl: './installation.component.html',
-  styleUrls: ['./installation.component.scss'],
+  selector: 'app-installation-page',
+  templateUrl: './installation-page.component.html',
+  styleUrls: ['./installation-page.component.scss'],
 })
-export class InstallationComponent {
+export class InstallationPageComponent {
   // Title
   title: string = 'Installation';
   description: string = 'Angular Gems contains nice components for you to be use';

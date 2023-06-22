@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuXComponent } from './pages/components/menu/menu-x/menu-x.component';
-import { MenuYIconsComponent } from './pages/components/menu/menu-y-icons/menu-y-icons.component';
+import { MenuXPageComponent } from './pages/components/menu/menu-x/menu-x-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageFoundComponent } from './pages/page-found/page-found.component';
-import { InstallationComponent } from './pages/get-started/installation/installation.component';
+import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
+import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
 
 const routes: Routes = [
   // Default
@@ -16,11 +16,13 @@ const routes: Routes = [
     component: PageFoundComponent,
     children: [
       // Get Started
-      { path: 'get-started/installation', component: InstallationComponent },
+      { path: 'get-started/installation', component: InstallationPageComponent },
 
       // Component
-      { path: 'components/menu/menu-x', component: MenuXComponent },
-      { path: 'components/menu/menu-y-icons', component: MenuYIconsComponent },
+      { path: 'components/menu/menu-x', component: MenuXPageComponent },
+
+      // More
+      { path: 'more/donnation', component: DonnationPageComponent },
     ],
   },
 

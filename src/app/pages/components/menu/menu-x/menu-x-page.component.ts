@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { MenuXConfig } from '@lud0do1202/angular-gems';
 
 @Component({
-  selector: 'app-menu-x',
-  templateUrl: './menu-x.component.html',
-  styleUrls: ['./menu-x.component.scss'],
+  selector: 'app-menu-x-page',
+  templateUrl: './menu-x-page.component.html',
+  styleUrls: ['./menu-x-page.component.scss'],
 })
-export class MenuXComponent {
+export class MenuXPageComponent {
   // Title
   title: string = 'Menu X';
   description: string = 'A horizontal menu with some animation';

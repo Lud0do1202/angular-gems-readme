@@ -28,20 +28,16 @@ export class NavComponent implements OnInit {
       {
         label: 'Components',
         icon: 'pi pi-fw pi-compass',
-        ...this.expanded(['/components/menu/menu-x', '/components/menu/menu-y-icons']),
+        ...this.expanded(['/components/menu/menu-x']),
         items: [
           {
             label: 'Menu',
             styleClass: 'subpanel',
-            ...this.expanded(['/components/menu/menu-x', '/components/menu/menu-y-icons']),
+            ...this.expanded(['/components/menu/menu-x']),
             items: [
               {
                 label: 'Menu X',
                 routerLink: '/components/menu/menu-x',
-              },
-              {
-                label: 'Menu y icons',
-                routerLink: '/components/menu/menu-y-icons',
               },
             ],
           },
@@ -50,14 +46,12 @@ export class NavComponent implements OnInit {
       {
         label: 'More',
         icon: 'pi pi-fw pi-ellipsis-h',
+        ...this.expanded(['/more/donnation']),
         items: [
           {
             label: 'Donnation',
             icon: 'pi pi-fw pi-paypal',
-          },
-          {
-            label: 'Github',
-            icon: 'pi pi-fw pi-github',
+            routerLink: '/more/donnation',
           },
         ],
       },
