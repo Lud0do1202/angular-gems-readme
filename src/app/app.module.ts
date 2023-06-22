@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Paypal
+import { NgxPayPalModule } from 'ngx-paypal';
+
 // Clipboard
 import { ClipboardModule } from 'ngx-clipboard';
 
@@ -11,6 +14,8 @@ import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
 import { TooltipModule } from 'primeng/tooltip';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ToastModule } from 'primeng/toast';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 // Angular Gems
 import { MenuXModule } from '@lud0do1202/angular-gems';
@@ -33,6 +38,7 @@ import { FormsModule } from '@angular/forms';
 import { SelectHtmlTypescriptComponent } from './components/select-html-typescript/select-html-typescript.component';
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
 import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
+import { PaypalComponent } from './components/paypal/paypal.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +57,7 @@ import { DonnationPageComponent } from './pages/more/donnation/donnation-page.co
     SelectHtmlTypescriptComponent,
     InstallationPageComponent,
     DonnationPageComponent,
+    PaypalComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,10 @@ import { DonnationPageComponent } from './pages/more/donnation/donnation-page.co
     TooltipModule,
     SelectButtonModule,
     MenuXModule,
+    InputNumberModule,
     ClipboardModule,
+    ToastModule,
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

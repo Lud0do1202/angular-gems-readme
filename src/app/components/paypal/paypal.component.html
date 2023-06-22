@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center align-items-center my-5 fs-4">
+  <label class="fw-bold me-3" for="donnation">Amount (€) : </label>
+  <p-inputNumber
+    [inputStyleClass]="'fs-5 py-2'"
+    id="donnation"
+    [(ngModel)]="donnation"
+    mode="currency"
+    currency="EUR"
+    locale="fr-BE"
+    [allowEmpty]="false"
+    [min]="0.01"
+  >
+  </p-inputNumber>
+</div>
+<ngx-paypal [config]="payPalConfig"></ngx-paypal>
+<p-toast></p-toast>
