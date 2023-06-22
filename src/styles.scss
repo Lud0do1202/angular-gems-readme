@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+// Import
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+// Body
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  height: 100vh;
+}
+
+// Nav
+.nav-panel {
+  .p-menuitem-link-active {
+    background-color: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 6px !important;
+
+    .p-menuitem-text {
+      color: var(--blue-300) !important;
+    }
+  }
+}
+
+// Dividers
+.title,
+.section {
+  .p-divider-content {
+    background-color: var(--blue-50);
+  }
+}
+
+// Card
+.card {
+  border: 1px solid #ced4da;
+  background-color: #fdfdfd;
+  box-shadow: none;
+
+  .p-card-body {
+    padding: 0;
+
+    .p-card-content {
+      font-size: 1.1rem;
+      padding: 0.9rem 1.2rem;
+    }
+  }
+}
+
+// Select code area
+.select-code-area {
+  width: 100%;
+
+  div[role="button"] {
+    width: 50%;
+  }
+}
+
+// Code area
+.code-area {
+  position: relative;
+
+  .p-card-body {
+    .p-card-content {
+      color: var(--bs-code-color);
+    }
+  }
+
+  .clipboard-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+
+    transition: 0.2s;
+    &:hover {
+      cursor: pointer;
+      background-color: #ddd;
+    }
+  }
+}
+
+.clipboard-tooltip {
+  .p-tooltip-text {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+
+// Description
+strong {
+  background-color: var(--blue-100);
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  color: var(--blue-400);
+  font-weight: normal;
+}

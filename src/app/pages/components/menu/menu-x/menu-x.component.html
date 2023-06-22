@@ -1,0 +1,114 @@
+<!-- Title -->
+<app-title [title]="title" [description]="description"></app-title>
+
+<!-- Import section -->
+<app-section [title]="'Import'">
+  <app-description>
+    Add this line in <strong>app.module.ts</strong> and the module in <strong>imports</strong>
+  </app-description>
+  <app-code-area> {{ import }} </app-code-area>
+</app-section>
+
+<!-- No configuration -->
+<app-section [title]="'No Configuration'">
+  <app-description> Menu X without any configuration </app-description>
+
+  <app-instance>
+    <gems-menu-x (linkClicked)="noConfigLoaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="noConfigLoaded === 0">Component 0 loaded</p>
+      <p *ngIf="noConfigLoaded === 1">Component 1 loaded</p>
+      <p *ngIf="noConfigLoaded === 2">Component 2 loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+
+  <app-select-html-typescript (onChange)="noConfigValue = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="noConfigValue === 'html'"> {{ noConfigHtml }} </app-code-area>
+  <app-code-area *ngIf="noConfigValue === 'ts'"> {{ noConfigTypescript }} </app-code-area>
+</app-section>
+
+<!-- Links -->
+<app-section [title]="'Links'">
+  <app-description> Label the links and set the number you want </app-description>
+
+  <app-instance>
+    <gems-menu-x [config]="linksConfig" (linkClicked)="linksLoaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="linksLoaded === 0">Component Members loaded</p>
+      <p *ngIf="linksLoaded === 1">Component Clients loaded</p>
+      <p *ngIf="linksLoaded === 2">Component Stats loaded</p>
+      <p *ngIf="linksLoaded === 3">Component Settings loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+
+  <app-select-html-typescript (onChange)="linksValue = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="linksValue === 'html'"> {{ linksHtml }} </app-code-area>
+  <app-code-area *ngIf="linksValue === 'ts'"> {{ linksTypescript }} </app-code-area>
+</app-section>
+
+<!-- Default active -->
+<app-section [title]="'Default active'">
+  <app-description> Change the default link </app-description>
+
+  <app-instance>
+    <gems-menu-x [config]="defaultActiveConfig" (linkClicked)="defaultActiveLoaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="defaultActiveLoaded === 0">Component Members loaded</p>
+      <p *ngIf="defaultActiveLoaded === 1">Component Clients loaded</p>
+      <p *ngIf="defaultActiveLoaded === 2">Component Stats loaded</p>
+      <p *ngIf="defaultActiveLoaded === 3">Component Settings loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+
+  <app-select-html-typescript (onChange)="defaultActiveValue = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="defaultActiveValue === 'html'"> {{ defaultActiveHtml }} </app-code-area>
+  <app-code-area *ngIf="defaultActiveValue === 'ts'"> {{ defaultActiveTypescript }} </app-code-area>
+</app-section>
+
+<!-- Main Style -->
+<app-section [title]="'Style'">
+  <app-description> Change the style </app-description>
+
+  <app-instance>
+    <gems-menu-x [config]="styleConfig" (linkClicked)="styleLoaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="styleLoaded === 0">Component Members loaded</p>
+      <p *ngIf="styleLoaded === 1">Component Clients loaded</p>
+      <p *ngIf="styleLoaded === 2">Component Stats loaded</p>
+      <p *ngIf="styleLoaded === 3">Component Settings loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+
+  <app-select-html-typescript (onChange)="styleValue = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="styleValue === 'html'"> {{ styleHtml }} </app-code-area>
+  <app-code-area *ngIf="styleValue === 'ts'"> {{ styleTypescript }} </app-code-area>
+</app-section>
+
+<!-- Style on links -->
+<app-section [title]="'Style on certain links'">
+  <app-description> Set a color different for each links </app-description>
+
+  <app-instance>
+    <gems-menu-x [config]="styleLinksConfig" (linkClicked)="styleLinksLoaded = $event"></gems-menu-x>
+    <div style="text-align: center">
+      <p *ngIf="styleLinksLoaded === 0">Component Members loaded</p>
+      <p *ngIf="styleLinksLoaded === 1">Component Clients loaded</p>
+      <p *ngIf="styleLinksLoaded === 2">Component Stats loaded</p>
+      <p *ngIf="styleLinksLoaded === 3">Component Settings loaded</p>
+    </div>
+  </app-instance>
+
+  <app-spacer></app-spacer>
+
+  <app-select-html-typescript (onChange)="styleLinksValue = $event"></app-select-html-typescript>
+  <app-code-area *ngIf="styleLinksValue === 'html'"> {{ styleLinksHtml }} </app-code-area>
+  <app-code-area *ngIf="styleLinksValue === 'ts'"> {{ styleLinksTypescript }} </app-code-area>
+</app-section>
