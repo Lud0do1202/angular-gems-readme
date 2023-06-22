@@ -26,10 +26,15 @@ body {
 
 // Dividers
 .title,
-.section {
+.section,
+.donnation-divider {
   .p-divider-content {
     background-color: var(--blue-50);
   }
+}
+
+.donnation-divider {
+  height: 250px;
 }
 
 // Card
