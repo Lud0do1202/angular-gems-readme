@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EventRow } from 'src/app/components/events-table/event-row';
+import { PropRow } from 'src/app/components/props-table/prop-row';
 
 @Component({
   selector: 'app-menu-x-page',
@@ -21,17 +23,19 @@ export class MenuXPageComponent {
   basicSelect: number = 0;
   basicHtml: string = `<gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
 
-<div style="text-align: center; margin-top: 0.5rem">
-  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
-  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
-  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
-  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+<div style="text-align: center; margin-top: 1rem">
+  <div *ngIf="loaded === 0">Component 'Sellers' loaded</div>
+  <div *ngIf="loaded === 1">Component 'Supervisor' loaded</div>
+  <div *ngIf="loaded === 2">Component 'Admins' loaded</div>
+  <div *ngIf="loaded === 3">Component 'Customers' loaded</div>
 </div>`;
-  basicTypescript: string = `export class DemoMenuXComponent {
-  // Links
+  basicTypescript: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
+  
+export class DemoMenuXComponent {
+  // Labels of the links
   links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
 
-  // Component to load
+  // The component to load (must be 0 if a default active link is not set)
   loaded: number = 0;
 }`;
 
@@ -39,14 +43,16 @@ export class MenuXPageComponent {
   defaultLoaded: number = 3;
   defaultSelect: number = 0;
   defaultHtml: string = `<gems-menu-x [links]="links" [default]="loaded" (onLinkClicked)="loaded = $event"></gems-menu-x>
-  
-<div style="text-align: center; margin-top: 0.5rem">
-  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
-  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
-  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
-  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+
+<div style="text-align: center; margin-top: 1rem">
+  <div *ngIf="loaded === 0">Component 'Sellers' loaded</div>
+  <div *ngIf="loaded === 1">Component 'Supervisor' loaded</div>
+  <div *ngIf="loaded === 2">Component 'Admins' loaded</div>
+  <div *ngIf="loaded === 3">Component 'Customers' loaded</div>
 </div>`;
-  defaultTypescript: string = `export class DemoMenuXComponent {
+  defaultTypescript: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
+  
+export class DemoMenuXComponent {
   // Links
   links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
 
@@ -58,23 +64,25 @@ export class MenuXPageComponent {
   customLoaded: number = 0;
   customId: string = 'custom-menu-x';
   customSelect: number = 0;
-  customHtml: string = `<gems-menu-x [styleId]="'custom-menu-x'" [links]="links" (onLinkClicked)="customLoaded = $event"></gems-menu-x>
+  customHtml: string = `<gems-menu-x [styleId]="'custom-menu-x'" [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
   
-<div style="text-align: center; margin-top: 0.5rem">
-  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
-  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
-  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
-  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+<div style="text-align: center; margin-top: 1rem">
+  <div *ngIf="loaded === 0">Component 'Sellers' loaded</div>
+  <div *ngIf="loaded === 1">Component 'Supervisor' loaded</div>
+  <div *ngIf="loaded === 2">Component 'Admins' loaded</div>
+  <div *ngIf="loaded === 3">Component 'Customers' loaded</div>
 </div>`;
-  customTypescript: string = `export class DemoMenuXComponent {
-  // Links
+  customTypescript: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
+  
+export class DemoMenuXComponent {
+  // Labels of the links
   links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
 
-  // Component to load
+  // The component to load (must be 0 if a default active link is not set)
   loaded: number = 0;
 }`;
   customScss: string = `// Use :host ::ng-deep or use a global style
-// The style id (You can use this id for several menu-x)
+// The style id (You can use this id for several <gems-menu-x>)
 :host ::ng-deep #custom-menu-x {
   // nav
   &.gems-menu-x {
@@ -83,19 +91,11 @@ export class MenuXPageComponent {
 
     // nav ul
     .gems-links {
-      // nav ul li (Default)
+      // nav ul li (All links)
       .gems-link {
         // The electron link
         &.gems-electron-link {
           background-color: lightgreen;
-        }
-
-        // The <a></a> of a link
-        .gems-link-text {
-          padding: 0.5rem 0;
-          transition: none;
-          font-size: 1rem;
-          color: black;
         }
 
         // The <li></li> active
@@ -104,6 +104,19 @@ export class MenuXPageComponent {
           .gems-link-text {
             font-size: 1.5rem;
             color: darkgreen;
+          }
+        }
+
+        // The <a></a> of a link
+        .gems-link-text {
+          padding: 0.5rem 0;
+          transition: none;
+          font-size: 1rem;
+          color: black;
+
+          &:hover {
+            opacity: 1;
+            font-weight: bold;
           }
         }
       }
@@ -115,17 +128,17 @@ export class MenuXPageComponent {
           background-color: lightsalmon;
         }
 
-        // The <a></a> of the second link
-        .gems-link-text {
-          color: gold;
-        }
-
         // The <li></li> of the second link when it's active
         &.active {
           // The <a></a> of the second link when it's active
           .gems-link-text {
             color: orangered;
           }
+        }
+
+        // The <a></a> of the second link
+        .gems-link-text {
+          color: gold;
         }
       }
 
@@ -137,10 +150,48 @@ export class MenuXPageComponent {
             color: lightcoral;
           }
         }
+        .gems-link-text {
+          &:hover {
+            text-shadow: gold 0 0 5px;
+          }
+        }
       }
     }
   }
 }`;
+
+  // Properties
+  props: PropRow[] = [
+    {
+      name: '[links]',
+      type: 'string[]',
+      default: '[]',
+      description: 'Labels of the links',
+    },
+    {
+      name: '[default]',
+      type: 'number[]',
+      default: '0',
+      description: 'The index of the default active link',
+    },
+    {
+      name: '[styleId]',
+      type: 'string',
+      default: "' '",
+      description: 'An id a custom style',
+      comment: 'Can be used for several <gems-menu-x>',
+    },
+  ];
+
+  // Events
+  events: EventRow[] = [
+    {
+      name: '(onLinkClicked)',
+      type: 'number',
+      description: 'Link has been clicked',
+      comment: 'We must update the loaded property (loaded = $event)',
+    },
+  ];
 
   // Code
   codeLoaded: number = 0;
@@ -148,8 +199,8 @@ export class MenuXPageComponent {
 <nav [id]="styleId" class="gems-menu-x">
   <ul class="gems-links">
     <!-- Electron link -->
-    <li 
-      [ngClass]="'gems-electron-link gems-link gems-link-' + activeLink" 
+    <li
+      [ngClass]="'gems-electron-link gems-link gems-link-' + activeLink"
       [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
     >
       <a class="gems-link-text"></a>
@@ -162,16 +213,18 @@ export class MenuXPageComponent {
       [class.active]="activeLink === i"
       [ngStyle]="{ width: widthLink }"
     >
-      <a (click)="click(i)" class="gems-link-text">{{ link }}</a>
+      <a (click)="click(i)" class="gems-link-text">
+        {{ link }}
+      </a>
     </li>
   </ul>
 </nav>`;
   codeTypescript: string = `import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-selector: 'gems-menu-x',
-templateUrl: './menu-x.component.html',
-styleUrls: ['./menu-x.component.scss'],
+  selector: 'gems-menu-x',
+  templateUrl: './menu-x.component.html',
+  styleUrls: ['./menu-x.component.scss'],
 })
 export class MenuXComponent implements OnInit {
   // Event link clicked
@@ -218,8 +271,8 @@ export class MenuXComponent implements OnInit {
   codeScss: string = `// nav
 .gems-menu-x {
   width: 100%;
-  background-color: var(--gems-bg-color);
-  border: var(--gems-border-s);
+  background-color: var(--gems-color-4);
+  border: 1px solid var(--gems-color-3);
   border-radius: var(--gems-border-radius-xl);
   font-size: 1.75rem;
 
@@ -246,7 +299,7 @@ export class MenuXComponent implements OnInit {
         top: 0;
         left: 0;
         height: 100%;
-        background-color: var(--gems-primary-color);
+        background-color: var(--gems-color-1);
         border-radius: var(--gems-border-radius-xl);
         transition: 0.5s;
       }
@@ -256,7 +309,7 @@ export class MenuXComponent implements OnInit {
         display: block;
         text-decoration: none;
         padding: 0.5rem 0;
-        color: var(--gems-primary-color);
+        color: var(--gems-color-1);
         transition: 0.25s;
         &:hover {
           cursor: pointer;
@@ -267,7 +320,7 @@ export class MenuXComponent implements OnInit {
       // nav ul li.active
       &.active {
         .gems-link-text {
-          color: var(--gems-third-color);
+          color: var(--gems-color-5);
         }
       }
     }

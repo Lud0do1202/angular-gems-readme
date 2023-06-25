@@ -1,5 +1,5 @@
 // Use :host ::ng-deep or use a global style
-// The style id (You can use this id for several menu-x)
+// The style id (You can use this id for several <gems-menu-x>)
 :host ::ng-deep #custom-menu-x {
   // nav
   &.gems-menu-x {
@@ -15,6 +15,15 @@
           background-color: lightgreen;
         }
 
+        // The <li></li> active
+        &.active {
+          // The <a></a> of the link active
+          .gems-link-text {
+            font-size: 1.5rem;
+            color: darkgreen;
+          }
+        }
+
         // The <a></a> of a link
         .gems-link-text {
           padding: 0.5rem 0;
@@ -27,15 +36,6 @@
             font-weight: bold;
           }
         }
-
-        // The <li></li> active
-        &.active {
-          // The <a></a> of the link active
-          .gems-link-text {
-            font-size: 1.5rem;
-            color: darkgreen;
-          }
-        }
       }
 
       // Style for the second link
@@ -45,11 +45,6 @@
           background-color: lightsalmon;
         }
 
-        // The <a></a> of the second link
-        .gems-link-text {
-          color: gold;
-        }
-
         // The <li></li> of the second link when it's active
         &.active {
           // The <a></a> of the second link when it's active
@@ -57,19 +52,24 @@
             color: orangered;
           }
         }
+
+        // The <a></a> of the second link
+        .gems-link-text {
+          color: gold;
+        }
       }
 
       // Style for the third link
       .gems-link-2 {
-        .gems-link-text {
-          &:hover {
-            text-shadow: gold 0 0 5px;
-          }
-        }
         &.active {
           .gems-link-text {
             text-decoration: line-through;
             color: lightcoral;
+          }
+        }
+        .gems-link-text {
+          &:hover {
+            text-shadow: gold 0 0 5px;
           }
         }
       }

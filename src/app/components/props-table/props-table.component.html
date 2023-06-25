@@ -1,0 +1,29 @@
+<p-table [value]="props" styleClass="p-datatable-gridlines">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-prop>
+    <tr>
+      <td style="width: 30%">
+        <strong>{{ prop.name }}</strong>
+      </td>
+      <td style="width: 20%">{{ prop.type }}</td>
+      <td style="width: 10%">{{ prop.default }}</td>
+      <td style="width: 40%; position: relative">
+        {{ prop.description }}
+        <i
+          *ngIf="prop.comment"
+          class="pi pi-info info-prop rounded-circle"
+          [pTooltip]="prop.comment"
+          tooltipPosition="left"
+          tooltipStyleClass="props-tooltip"
+        ></i>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

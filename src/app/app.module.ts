@@ -19,6 +19,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ToastModule } from 'primeng/toast';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TableModule } from 'primeng/table';
 
 // Angular Gems
 import { MenuXModule } from '@lud0do1202/angular-gems';
@@ -43,6 +44,8 @@ import { PaypalComponent } from './components/paypal/paypal.component';
 import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
 import { SelectComponent } from './components/select/select.component';
 import { ExampleComponent } from './components/example/example.component';
+import { PropsTableComponent } from './components/props-table/props-table.component';
+import { EventsTableComponent } from './components/events-table/events-table.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,8 @@ import { ExampleComponent } from './components/example/example.component';
     RepositoryPageComponent,
     SelectComponent,
     ExampleComponent,
+    PropsTableComponent,
+    EventsTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,7 @@ import { ExampleComponent } from './components/example/example.component';
     AppRoutingModule,
     PanelMenuModule,
     DividerModule,
+    TableModule,
     CardModule,
     TooltipModule,
     SelectButtonModule,

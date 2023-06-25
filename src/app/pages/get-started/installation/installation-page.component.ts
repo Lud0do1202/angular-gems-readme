@@ -14,7 +14,8 @@ export class InstallationPageComponent {
   download: string = 'npm i @lud0do1202/angular-gems';
 
   // App module
-  appModule: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
+  appModule: string = `// Import the module you want to use
+import { MenuXModule } from '@lud0do1202/angular-gems';
 
 @NgModule({
   imports: [

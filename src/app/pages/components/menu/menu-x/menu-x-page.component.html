@@ -15,17 +15,16 @@
 <!-- Basic -->
 <app-section [title]="'Basic'">
   <!-- Description -->
-  <app-description> The template with minimal configuration </app-description>
+  <app-description> A basic example of <strong>&lt;gems-menu-x></strong> </app-description>
 
   <!-- Example -->
   <app-example>
-    <gems-menu-x [id]="" [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-x>
-
-    <div style="text-align: center; margin-top: 0.5rem">
-      <p *ngIf="basicLoaded === 0">Component 'Sellers' loaded</p>
-      <p *ngIf="basicLoaded === 1">Component 'Supervisor' loaded</p>
-      <p *ngIf="basicLoaded === 2">Component 'Admins' loaded</p>
-      <p *ngIf="basicLoaded === 3">Component 'Customers' loaded</p>
+    <gems-menu-x [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-x>
+    <div style="text-align: center; margin-top: 1rem">
+      <div *ngIf="basicLoaded === 0">Component 'Sellers' loaded</div>
+      <div *ngIf="basicLoaded === 1">Component 'Supervisor' loaded</div>
+      <div *ngIf="basicLoaded === 2">Component 'Admins' loaded</div>
+      <div *ngIf="basicLoaded === 3">Component 'Customers' loaded</div>
     </div>
   </app-example>
   <app-spacer></app-spacer>
@@ -45,11 +44,11 @@
   <app-example>
     <gems-menu-x [links]="links" [default]="defaultLoaded" (onLinkClicked)="defaultLoaded = $event"></gems-menu-x>
 
-    <div style="text-align: center; margin-top: 0.5rem">
-      <p *ngIf="defaultLoaded === 0">Component 'Sellers' loaded</p>
-      <p *ngIf="defaultLoaded === 1">Component 'Supervisor' loaded</p>
-      <p *ngIf="defaultLoaded === 2">Component 'Admins' loaded</p>
-      <p *ngIf="defaultLoaded === 3">Component 'Customers' loaded</p>
+    <div style="text-align: center; margin-top: 1rem">
+      <div *ngIf="defaultLoaded === 0">Component 'Sellers' loaded</div>
+      <div *ngIf="defaultLoaded === 1">Component 'Supervisor' loaded</div>
+      <div *ngIf="defaultLoaded === 2">Component 'Admins' loaded</div>
+      <div *ngIf="defaultLoaded === 3">Component 'Customers' loaded</div>
     </div>
   </app-example>
   <app-spacer></app-spacer>
@@ -63,17 +62,16 @@
 <!-- Custom -->
 <app-section [title]="'Custom'">
   <!-- Description -->
-  <app-description> The css struct for custom menu-x </app-description>
+  <app-description> Let your imagination create the most beautiful menu </app-description>
 
   <!-- Example -->
   <app-example>
     <gems-menu-x [styleId]="'custom-menu-x'" [links]="links" (onLinkClicked)="customLoaded = $event"></gems-menu-x>
-
-    <div style="text-align: center; margin-top: 0.5rem">
-      <p *ngIf="customLoaded === 0">Component 'Sellers' loaded</p>
-      <p *ngIf="customLoaded === 1">Component 'Supervisor' loaded</p>
-      <p *ngIf="customLoaded === 2">Component 'Admins' loaded</p>
-      <p *ngIf="customLoaded === 3">Component 'Customers' loaded</p>
+    <div style="text-align: center; margin-top: 1rem">
+      <div *ngIf="customLoaded === 0">Component 'Sellers' loaded</div>
+      <div *ngIf="customLoaded === 1">Component 'Supervisor' loaded</div>
+      <div *ngIf="customLoaded === 2">Component 'Admins' loaded</div>
+      <div *ngIf="customLoaded === 3">Component 'Customers' loaded</div>
     </div>
   </app-example>
   <app-spacer></app-spacer>
@@ -85,10 +83,22 @@
   <app-code-area *ngIf="customSelect === 2" [code]="customScss"></app-code-area>
 </app-section>
 
+<!-- Properties -->
+<app-section [title]="'Properties'">
+  <app-description>The <strong>@Input( )</strong> of &lt;gems-menu-x></app-description>
+  <app-props-table [props]="props"></app-props-table>
+</app-section>
+
+<!-- Events -->
+<app-section [title]="'Events'">
+  <app-description>The <strong>@Output( )</strong> of &lt;gems-menu-x></app-description>
+  <app-events-table [events]="events"></app-events-table>
+</app-section>
+
 <!-- Code -->
 <app-section [title]="'Code'">
   <!-- Description -->
-  <app-description> The code behind </app-description>
+  <app-description> Get inside my head and see through my code </app-description>
 
   <!-- Code area -->
   <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="codeLoaded = $event"></app-select>

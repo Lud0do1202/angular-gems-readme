@@ -42,3 +42,27 @@ strong {
     color: var(--gems-color-2);
   }
 }
+
+// Info props
+.info-prop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem;
+  margin: 0.2rem;
+  font-size: 0.6rem;
+  color: var(--gems-color-1);
+  background-color: var(--gems-color-3);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.props-tooltip {
+  .p-tooltip-text {
+    width: fit-content;
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
