@@ -1,0 +1,29 @@
+:host ::ng-deep .select {
+  &.p-selectbutton {
+    width: 100%;
+    display: flex;
+
+    // Buttons
+    .p-button {
+      flex-grow: 1;
+
+      // Not highlight buttons
+      &:not(.p-disabled):not(.p-highlight) {
+        border: 1px solid var(--gems-color-3);
+        background-color: var(--gems-color-4);
+        color: var(--gems-color-2);
+        &:hover {
+          color: var(--gems-color-1 );
+          background-color: var(--gems-color-3);
+        }
+      }
+
+      // Highlight button
+      &.p-highlight {
+        background: var(--gems-color-1);
+        border: var(--gems-color-1);
+        color: var(--gems-color-5);
+      }
+    }
+  }
+}

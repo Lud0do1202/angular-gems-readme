@@ -66,3 +66,36 @@
     }
   }
 }
+
+// Use :host ::ng-deep or use a global style
+// The style id (You can use this id for several menu-x)
+:host ::ng-deep #basic-menu-x {
+  // nav
+  &.gems-menu-x {
+    background-color: var(--gems-color-4);
+    border: 1px solid var(--gems-color-3);
+
+    // nav ul
+    .gems-links {
+      // nav ul li (Default)
+      .gems-link {
+        // The electron link
+        &.gems-electron-link {
+          background-color: var(--gems-color-1);
+        }
+
+        .gems-link-text {
+          color: var(--gems-color-1);
+        }
+
+        // The <li></li> active
+        &.active {
+          // The <a></a> of the link active
+          .gems-link-text {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
-@import '~highlight.js/styles/vs2015.css';
+@import "~highlight.js/styles/vs2015.css";
 
 // Body
 body {
@@ -11,9 +11,11 @@ body {
   font-family: var(--font-family);
   height: 100vh;
 
-  --gems-primary-color: #3dc06d;
-  --gems-secondary-color: #5fd38a;
-  --gems-third-color: #fff;
+  --gems-color-1: #4e944f;
+  --gems-color-2: #83bd75;
+  --gems-color-3: #b4e197;
+  --gems-color-4: #e9efc0;
+  --gems-color-5: #fafafa;
   --gems-bg-color: #fafafa;
   --gems-border-color: #dfdfdf;
   --gems-border-s: 1px solid var(--gems-border-color);
@@ -24,68 +26,21 @@ body {
   --gems-border-radius-m: 10px;
   --gems-border-radius-l: 20px;
   --gems-border-radius-xl: 35px;
-
-  --primary-color : lightgreen
-}
-
-// Nav
-.nav-panel {
-  .p-menuitem-link-active {
-    background-color: var(--blue-50);
-    border: 1px solid var(--blue-100);
-    border-radius: 6px !important;
-
-    .p-menuitem-text {
-      color: var(--blue-300) !important;
-    }
-  }
 }
 
 // Dividers
-.title,
-.section,
-.donnation-divider {
+.bg-divider {
   .p-divider-content {
-    background-color: var(--blue-50);
-  }
-}
-
-.donnation-divider {
-  height: 250px;
-}
-
-// Card
-.card {
-  border: 1px solid #ced4da;
-  background-color: #fdfdfd;
-  box-shadow: none;
-
-  .p-card-body {
-    padding: 0;
-
-    .p-card-content {
-      font-size: 1.1rem;
-      padding: 0.9rem 1.2rem;
-    }
-  }
-}
-
-// Select code area
-.select {
-  width: 100%;
-  display: flex;
-
-  .p-button {
-    flex-grow: 1;
+    background-color: var(--green-50);
   }
 }
 
 // Description
 strong {
-  background-color: var(--blue-100);
+  background-color: var(--gems-color-3);
   padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  color: var(--blue-400);
+  border-radius: var(--gems-border-radius-m);
+  color: var(--gems-color-1);
   font-weight: normal;
 }
 
@@ -97,9 +52,9 @@ strong {
 // Link
 .link {
   text-decoration: none;
-  color: var(--blue-600);
+  color: var(--gems-color-1);
   transition: 0.2s;
   &:hover {
-    color: var(--blue-300);
+    color: var(--gems-color-2);
   }
 }

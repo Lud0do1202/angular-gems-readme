@@ -5,8 +5,19 @@
 
   padding: 1rem;
   border: 1px solid #dee2e6;
-  color: #6c757d;
-  background: var(--blue-50);
+  color: var(--gems-color-1);
+  background: var(--gems-color-3);
   font-weight: 700;
   border-radius: 6px;
+}
+// Nav
+:host ::ng-deep .nav-panel {
+  .p-menuitem-link-active {
+    background: var(--gems-color-3);
+    border-radius: var(--gems-border-radius-m) !important;
+
+    .p-menuitem-text {
+      color: var(--gems-color-1) !important;
+    }
+  }
 }
