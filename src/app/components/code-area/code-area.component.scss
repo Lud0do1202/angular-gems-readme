@@ -1,8 +1,34 @@
-.container {
-  display: flex;
-  justify-content: center;
+// Container
+.code-area {
+  position: relative;
 
-  > * {
-    width: 80%;
+  // Code section
+  code {
+    border-radius: var(--border-radius);
+  }
+
+  // Copy button
+  .clipboard-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem;
+    margin: 0.2rem;
+    font-size: 1.2rem;
+    color: #fff;
+
+    transition: 0.2s;
+    &:hover {
+      cursor: pointer;
+      background-color: var(--text-color);
+    }
+  }
+}
+
+// Tooltip (::ng-deep because it's been created at the same level as body)
+::ng-deep .clipboard-tooltip {
+  .p-tooltip-text {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
   }
 }

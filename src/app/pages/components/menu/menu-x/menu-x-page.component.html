@@ -3,112 +3,96 @@
 
 <!-- Import section -->
 <app-section [title]="'Import'">
+  <!-- Description -->
   <app-description>
     Add this line in <strong>app.module.ts</strong> and the module in <strong>imports</strong>
   </app-description>
-  <app-code-area> {{ import }} </app-code-area>
+
+  <!-- Code area -->
+  <app-code-area [code]="import"></app-code-area>
 </app-section>
 
-<!-- No configuration -->
-<app-section [title]="'No Configuration'">
-  <app-description> Menu X without any configuration </app-description>
+<!-- Basic -->
+<app-section [title]="'Basic'">
+  <!-- Description -->
+  <app-description> The template with minimal configuration </app-description>
 
-  <app-instance>
-    <gems-menu-x (linkClicked)="noConfigLoaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="noConfigLoaded === 0">Component 0 loaded</p>
-      <p *ngIf="noConfigLoaded === 1">Component 1 loaded</p>
-      <p *ngIf="noConfigLoaded === 2">Component 2 loaded</p>
+  <!-- Example -->
+  <app-example>
+    <gems-menu-x [id]="" [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-x>
+
+    <div style="text-align: center; margin-top: 0.5rem">
+      <p *ngIf="basicLoaded === 0">Component 'Sellers' loaded</p>
+      <p *ngIf="basicLoaded === 1">Component 'Supervisor' loaded</p>
+      <p *ngIf="basicLoaded === 2">Component 'Admins' loaded</p>
+      <p *ngIf="basicLoaded === 3">Component 'Customers' loaded</p>
     </div>
-  </app-instance>
-
+  </app-example>
   <app-spacer></app-spacer>
 
-  <app-select-html-typescript (onChange)="noConfigValue = $event"></app-select-html-typescript>
-  <app-code-area *ngIf="noConfigValue === 'html'"> {{ noConfigHtml }} </app-code-area>
-  <app-code-area *ngIf="noConfigValue === 'ts'"> {{ noConfigTypescript }} </app-code-area>
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript']" (onChange)="basicSelect = $event"></app-select>
+  <app-code-area *ngIf="basicSelect === 0" [code]="basicHtml"></app-code-area>
+  <app-code-area *ngIf="basicSelect === 1" [code]="basicTypescript"></app-code-area>
 </app-section>
 
-<!-- Links -->
-<app-section [title]="'Links'">
-  <app-description> Label the links and set the number you want </app-description>
+<!-- Default active link -->
+<app-section [title]="'Default active link'">
+  <!-- Description -->
+  <app-description> Set a default active link </app-description>
 
-  <app-instance>
-    <gems-menu-x [config]="linksConfig" (linkClicked)="linksLoaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="linksLoaded === 0">Component Members loaded</p>
-      <p *ngIf="linksLoaded === 1">Component Customers loaded</p>
-      <p *ngIf="linksLoaded === 2">Component Stats loaded</p>
-      <p *ngIf="linksLoaded === 3">Component Settings loaded</p>
+  <!-- Example -->
+  <app-example>
+    <gems-menu-x [links]="links" [default]="defaultLoaded" (onLinkClicked)="defaultLoaded = $event"></gems-menu-x>
+
+    <div style="text-align: center; margin-top: 0.5rem">
+      <p *ngIf="defaultLoaded === 0">Component 'Sellers' loaded</p>
+      <p *ngIf="defaultLoaded === 1">Component 'Supervisor' loaded</p>
+      <p *ngIf="defaultLoaded === 2">Component 'Admins' loaded</p>
+      <p *ngIf="defaultLoaded === 3">Component 'Customers' loaded</p>
     </div>
-  </app-instance>
-
+  </app-example>
   <app-spacer></app-spacer>
 
-  <app-select-html-typescript (onChange)="linksValue = $event"></app-select-html-typescript>
-  <app-code-area *ngIf="linksValue === 'html'"> {{ linksHtml }} </app-code-area>
-  <app-code-area *ngIf="linksValue === 'ts'"> {{ linksTypescript }} </app-code-area>
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript']" (onChange)="defaultSelect = $event"></app-select>
+  <app-code-area *ngIf="defaultSelect === 0" [code]="defaultHtml"></app-code-area>
+  <app-code-area *ngIf="defaultSelect === 1" [code]="defaultTypescript"></app-code-area>
 </app-section>
 
-<!-- Default active -->
-<app-section [title]="'Default active'">
-  <app-description> Change the default link </app-description>
+<!-- Custom -->
+<app-section [title]="'Custom'">
+  <!-- Description -->
+  <app-description> The css struct for custom menu-x </app-description>
 
-  <app-instance>
-    <gems-menu-x [config]="defaultActiveConfig" (linkClicked)="defaultActiveLoaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="defaultActiveLoaded === 0">Component Members loaded</p>
-      <p *ngIf="defaultActiveLoaded === 1">Component Customers loaded</p>
-      <p *ngIf="defaultActiveLoaded === 2">Component Stats loaded</p>
-      <p *ngIf="defaultActiveLoaded === 3">Component Settings loaded</p>
+  <!-- Example -->
+  <app-example>
+    <gems-menu-x [styleId]="'custom-menu-x'" [links]="links" (onLinkClicked)="customLoaded = $event"></gems-menu-x>
+
+    <div style="text-align: center; margin-top: 0.5rem">
+      <p *ngIf="customLoaded === 0">Component 'Sellers' loaded</p>
+      <p *ngIf="customLoaded === 1">Component 'Supervisor' loaded</p>
+      <p *ngIf="customLoaded === 2">Component 'Admins' loaded</p>
+      <p *ngIf="customLoaded === 3">Component 'Customers' loaded</p>
     </div>
-  </app-instance>
-
+  </app-example>
   <app-spacer></app-spacer>
 
-  <app-select-html-typescript (onChange)="defaultActiveValue = $event"></app-select-html-typescript>
-  <app-code-area *ngIf="defaultActiveValue === 'html'"> {{ defaultActiveHtml }} </app-code-area>
-  <app-code-area *ngIf="defaultActiveValue === 'ts'"> {{ defaultActiveTypescript }} </app-code-area>
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="customSelect = $event"></app-select>
+  <app-code-area *ngIf="customSelect === 0" [code]="customHtml"></app-code-area>
+  <app-code-area *ngIf="customSelect === 1" [code]="customTypescript"></app-code-area>
+  <app-code-area *ngIf="customSelect === 2" [code]="customScss"></app-code-area>
 </app-section>
 
-<!-- Main Style -->
-<app-section [title]="'Style'">
-  <app-description> Change the style </app-description>
+<!-- Code -->
+<app-section [title]="'Code'">
+  <!-- Description -->
+  <app-description> The code behind </app-description>
 
-  <app-instance>
-    <gems-menu-x [config]="styleConfig" (linkClicked)="styleLoaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="styleLoaded === 0">Component Members loaded</p>
-      <p *ngIf="styleLoaded === 1">Component Customers loaded</p>
-      <p *ngIf="styleLoaded === 2">Component Stats loaded</p>
-      <p *ngIf="styleLoaded === 3">Component Settings loaded</p>
-    </div>
-  </app-instance>
-
-  <app-spacer></app-spacer>
-
-  <app-select-html-typescript (onChange)="styleValue = $event"></app-select-html-typescript>
-  <app-code-area *ngIf="styleValue === 'html'"> {{ styleHtml }} </app-code-area>
-  <app-code-area *ngIf="styleValue === 'ts'"> {{ styleTypescript }} </app-code-area>
-</app-section>
-
-<!-- Style on links -->
-<app-section [title]="'Style on certain links'">
-  <app-description> Set a color different for each links </app-description>
-
-  <app-instance>
-    <gems-menu-x [config]="styleLinksConfig" (linkClicked)="styleLinksLoaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="styleLinksLoaded === 0">Component Members loaded</p>
-      <p *ngIf="styleLinksLoaded === 1">Component Customers loaded</p>
-      <p *ngIf="styleLinksLoaded === 2">Component Stats loaded</p>
-      <p *ngIf="styleLinksLoaded === 3">Component Settings loaded</p>
-    </div>
-  </app-instance>
-
-  <app-spacer></app-spacer>
-
-  <app-select-html-typescript (onChange)="styleLinksValue = $event"></app-select-html-typescript>
-  <app-code-area *ngIf="styleLinksValue === 'html'"> {{ styleLinksHtml }} </app-code-area>
-  <app-code-area *ngIf="styleLinksValue === 'ts'"> {{ styleLinksTypescript }} </app-code-area>
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="codeLoaded = $event"></app-select>
+  <app-code-area *ngIf="codeLoaded === 0" [code]="codeHtml"></app-code-area>
+  <app-code-area *ngIf="codeLoaded === 1" [code]="codeTypescript"></app-code-area>
+  <app-code-area *ngIf="codeLoaded === 2" [code]="codeScss"></app-code-area>
 </app-section>

@@ -2,6 +2,7 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+@import '~highlight.js/styles/vs2015.css';
 
 // Body
 body {
@@ -9,6 +10,22 @@ body {
   padding: 0;
   font-family: var(--font-family);
   height: 100vh;
+
+  --gems-primary-color: #3dc06d;
+  --gems-secondary-color: #5fd38a;
+  --gems-third-color: #fff;
+  --gems-bg-color: #fafafa;
+  --gems-border-color: #dfdfdf;
+  --gems-border-s: 1px solid var(--gems-border-color);
+  --gems-border-m: 2px solid var(--gems-border-color);
+  --gems-border-l: 4px solid var(--gems-border-color);
+  --gems-border-radius-xs: 3px;
+  --gems-border-radius-s: 6px;
+  --gems-border-radius-m: 10px;
+  --gems-border-radius-l: 20px;
+  --gems-border-radius-xl: 35px;
+
+  --primary-color : lightgreen
 }
 
 // Nav
@@ -54,44 +71,12 @@ body {
 }
 
 // Select code area
-.select-code-area {
+.select {
   width: 100%;
+  display: flex;
 
-  div[role="button"] {
-    width: 50%;
-  }
-}
-
-// Code area
-.code-area {
-  position: relative;
-
-  .p-card-body {
-    .p-card-content {
-      color: var(--bs-code-color);
-    }
-  }
-
-  .clipboard-btn {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    padding: 0.4rem;
-    font-size: 1.2rem;
-    color: var(--text-color);
-
-    transition: 0.2s;
-    &:hover {
-      cursor: pointer;
-      background-color: #ddd;
-    }
-  }
-}
-
-.clipboard-tooltip {
-  .p-tooltip-text {
-    font-size: 0.8rem;
-    padding: 0.5rem;
+  .p-button {
+    flex-grow: 1;
   }
 }
 

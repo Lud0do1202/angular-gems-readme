@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Highlights
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+
 // Paypal
 import { NgxPayPalModule } from 'ngx-paypal';
 
@@ -32,14 +35,14 @@ import { SectionComponent } from './components/section/section.component';
 import { ClipboardBtnComponent } from './components/clipboard-btn/clipboard-btn.component';
 import { CodeAreaComponent } from './components/code-area/code-area.component';
 import { DescriptionComponent } from './components/description/description.component';
-import { InstanceComponent } from './components/instance/instance.component';
 import { SpacerComponent } from './components/spacer/spacer.component';
 import { FormsModule } from '@angular/forms';
-import { SelectHtmlTypescriptComponent } from './components/select-html-typescript/select-html-typescript.component';
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
-import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
+import { DonationPageComponent } from './pages/more/donation/donation-page.component';
 import { PaypalComponent } from './components/paypal/paypal.component';
 import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
+import { SelectComponent } from './components/select/select.component';
+import { ExampleComponent } from './components/example/example.component';
 
 @NgModule({
   declarations: [
@@ -53,13 +56,13 @@ import { RepositoryPageComponent } from './pages/more/repository/repository-page
     ClipboardBtnComponent,
     CodeAreaComponent,
     DescriptionComponent,
-    InstanceComponent,
     SpacerComponent,
-    SelectHtmlTypescriptComponent,
     InstallationPageComponent,
-    DonnationPageComponent,
+    DonationPageComponent,
     PaypalComponent,
     RepositoryPageComponent,
+    SelectComponent,
+    ExampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,8 +79,22 @@ import { RepositoryPageComponent } from './pages/more/repository/repository-page
     ClipboardModule,
     ToastModule,
     NgxPayPalModule,
+    HighlightModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          scss: () => import('highlight.js/lib/languages/scss'),
+          html: () => import('highlight.js/lib/languages/xml'),
+          bash: () => import('highlight.js/lib/languages/bash'),
+        },
+      },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

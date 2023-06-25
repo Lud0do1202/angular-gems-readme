@@ -46,12 +46,12 @@ export class NavComponent implements OnInit {
       {
         label: 'More',
         icon: 'pi pi-fw pi-ellipsis-h',
-        ...this.expanded(['/more/donnation', '/more/repository']),
+        ...this.expanded(['/more/donation', '/more/repository']),
         items: [
           {
-            label: 'Donnation',
+            label: 'Donation',
             icon: 'pi pi-fw pi-paypal',
-            routerLink: '/more/donnation',
+            routerLink: '/more/donation',
           },
           {
             label: 'Repository',

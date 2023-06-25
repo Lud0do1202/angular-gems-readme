@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuXConfig } from '@lud0do1202/angular-gems';
 
 @Component({
   selector: 'app-installation-page',
@@ -15,37 +14,32 @@ export class InstallationPageComponent {
   download: string = 'npm i @lud0do1202/angular-gems';
 
   // App module
-  appModule: string = `
-    // Angular Gems
-    import { MenuXModule } from '@lud0do1202/angular-gems';
+  appModule: string = `// Angular Gems
+import { MenuXModule } from '@lud0do1202/angular-gems';
 
-    @NgModule({
-      imports: [
-        // ...
-        MenuXModule,
-      ],
-    })
-    export class AppModule {}
-  `;
+@NgModule({
+  imports: [
+    ...
+    MenuXModule,
+  ],
+})
+export class AppModule {}`;
 
   // Component
+  links: string[] = ['Members', 'Customers'];
   loaded: number = 0;
-  config: MenuXConfig = { links: [{ label: 'Members' }, { label: 'Customers' }] };
-  value: string = 'html';
-  componentHtml: string = `
-    <gems-menu-x [config]="config" (linkClicked)="loaded = $event"></gems-menu-x>
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 0">Component Customers loaded</p>
-    </div>
-  `;
-  componentTypescript: string = `
-    import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
+  value: number = 0;
+  componentHtml: string = `<gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
 
-    export class MenuXComponent {
-      loaded: number = 0;
-      
-      config: MenuXConfig = { links: [{ label: 'Members' }, { label: 'Customers' }] };
-    }
-  `;
+<div style="text-align: center; margin-top: 0.5rem">
+  <p *ngIf="loaded === 0">Component 'Members' loaded</p>
+  <p *ngIf="loaded === 1">Component 'Customers' loaded</p>
+</div>`;
+  componentTypescript: string = `export class MenuXComponent {
+  // Links
+  links: string[] = ['Members', 'Customers'];
+
+  // Component to load
+  loaded: number = 0;
+}`;
 }

@@ -1,7 +1,5 @@
-<p-card styleClass="card code-area">
-  <div [style.white-space]="'pre-wrap'">
-    <p class="m-0" #toCopy><ng-content></ng-content></p>
-  </div>
+<div class="code-area">
+  <pre><code [highlight]="code"></code></pre>
   <i
     class="pi pi-copy clipboard-btn rounded-circle"
     pTooltip="Copy"
@@ -9,4 +7,4 @@
     tooltipStyleClass="clipboard-tooltip"
     (click)="clipboard()"
   ></i>
-</p-card>
+</div>

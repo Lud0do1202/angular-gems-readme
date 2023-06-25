@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
@@ -7,12 +7,11 @@ import { ClipboardService } from 'ngx-clipboard';
   styleUrls: ['./code-area.component.scss'],
 })
 export class CodeAreaComponent {
-  @ViewChild('toCopy') toCopy!: ElementRef<HTMLParagraphElement>;
+  @Input() code: string = '';
 
   constructor(private clipboardService: ClipboardService) {}
 
   clipboard(): void {
-    const content = this.toCopy.nativeElement.innerText ?? '';
-    this.clipboardService.copy(content);
+    this.clipboardService.copy(this.code);
   }
 }

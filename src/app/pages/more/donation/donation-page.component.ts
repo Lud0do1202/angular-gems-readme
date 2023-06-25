@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-donnation-page',
-  templateUrl: './donnation-page.component.html',
-  styleUrls: ['./donnation-page.component.scss'],
+  selector: 'app-donation-page',
+  templateUrl: './donation-page.component.html',
+  styleUrls: ['./donation-page.component.scss'],
 })
-export class DonnationPageComponent {
+export class DonationPageComponent {
   // Title
-  title: string = 'Donnation';
+  title: string = 'Donation';
   description: string = `
     I still live with my parents, have no car and no job. In short, I'm a student.
     Therefore I'm pursuing my quest for wealth to get all the benefits that brings.

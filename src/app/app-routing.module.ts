@@ -4,7 +4,7 @@ import { MenuXPageComponent } from './pages/components/menu/menu-x/menu-x-page.c
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageFoundComponent } from './pages/page-found/page-found.component';
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
-import { DonnationPageComponent } from './pages/more/donnation/donnation-page.component';
+import { DonationPageComponent } from './pages/more/donation/donation-page.component';
 import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'components/menu/menu-x', component: MenuXPageComponent },
 
       // More
-      { path: 'more/donnation', component: DonnationPageComponent },
+      { path: 'more/donation', component: DonationPageComponent },
       { path: 'more/repository', component: RepositoryPageComponent },
     ],
   },

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InstanceComponent } from './instance.component';
+import { SelectComponent } from './select.component';
 
-describe('InstanceComponent', () => {
-  let component: InstanceComponent;
-  let fixture: ComponentFixture<InstanceComponent>;
+describe('SelectComponent', () => {
+  let component: SelectComponent;
+  let fixture: ComponentFixture<SelectComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InstanceComponent]
+      declarations: [SelectComponent]
     });
-    fixture = TestBed.createComponent(InstanceComponent);
+    fixture = TestBed.createComponent(SelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

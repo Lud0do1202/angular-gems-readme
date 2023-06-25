@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuXConfig } from '@lud0do1202/angular-gems';
 
 @Component({
   selector: 'app-menu-x-page',
@@ -14,173 +13,264 @@ export class MenuXPageComponent {
   // Import
   import: string = "import { MenuXModule } from '@lud0do1202/angular-gems';";
 
-  // No config
-  noConfigLoaded: number = 0;
-  noConfigValue: string = 'html';
-  noConfigHtml: string = `
-    <gems-menu-x (linkClicked)="loaded = $event"></gems-menu-x>
+  // Links
+  links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
 
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component 0 loaded</p>
-      <p *ngIf="loaded === 1">Component 1 loaded</p>
-      <p *ngIf="loaded === 2">Component 2 loaded</p>
-    </div>
-  `;
-  noConfigTypescript: string = `
-    export class MenuXComponent {
-      loaded: number = 0;
+  // Basic
+  basicLoaded: number = 0;
+  basicSelect: number = 0;
+  basicHtml: string = `<gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
+
+<div style="text-align: center; margin-top: 0.5rem">
+  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
+  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
+  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
+  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+</div>`;
+  basicTypescript: string = `export class DemoMenuXComponent {
+  // Links
+  links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
+
+  // Component to load
+  loaded: number = 0;
+}`;
+
+  // Default
+  defaultLoaded: number = 3;
+  defaultSelect: number = 0;
+  defaultHtml: string = `<gems-menu-x [links]="links" [default]="loaded" (onLinkClicked)="loaded = $event"></gems-menu-x>
+  
+<div style="text-align: center; margin-top: 0.5rem">
+  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
+  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
+  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
+  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+</div>`;
+  defaultTypescript: string = `export class DemoMenuXComponent {
+  // Links
+  links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
+
+  // Default component to load
+  loaded: number = 3;
+}`;
+
+  // Custom
+  customLoaded: number = 0;
+  customId: string = 'custom-menu-x';
+  customSelect: number = 0;
+  customHtml: string = `<gems-menu-x [styleId]="'custom-menu-x'" [links]="links" (onLinkClicked)="customLoaded = $event"></gems-menu-x>
+  
+<div style="text-align: center; margin-top: 0.5rem">
+  <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
+  <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
+  <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
+  <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
+</div>`;
+  customTypescript: string = `export class DemoMenuXComponent {
+  // Links
+  links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
+
+  // Component to load
+  loaded: number = 0;
+}`;
+  customScss: string = `// Use :host ::ng-deep or use a global style
+// The style id (You can use this id for several menu-x)
+:host ::ng-deep #custom-menu-x {
+  // nav
+  &.gems-menu-x {
+    background-color: lightseagreen;
+    border: 3px solid grey;
+
+    // nav ul
+    .gems-links {
+      // nav ul li (Default)
+      .gems-link {
+        // The electron link
+        &.gems-electron-link {
+          background-color: lightgreen;
+        }
+
+        // The <a></a> of a link
+        .gems-link-text {
+          padding: 0.5rem 0;
+          transition: none;
+          font-size: 1rem;
+          color: black;
+        }
+
+        // The <li></li> active
+        &.active {
+          // The <a></a> of the link active
+          .gems-link-text {
+            font-size: 1.5rem;
+            color: darkgreen;
+          }
+        }
+      }
+
+      // Style for the second link
+      .gems-link-1 {
+        // The electron link when the second link is active
+        &.gems-electron-link {
+          background-color: lightsalmon;
+        }
+
+        // The <a></a> of the second link
+        .gems-link-text {
+          color: gold;
+        }
+
+        // The <li></li> of the second link when it's active
+        &.active {
+          // The <a></a> of the second link when it's active
+          .gems-link-text {
+            color: orangered;
+          }
+        }
+      }
+
+      // Style for the third link
+      .gems-link-2 {
+        &.active {
+          .gems-link-text {
+            text-decoration: line-through;
+            color: lightcoral;
+          }
+        }
+      }
     }
-  `;
+  }
+}`;
+
+  // Code
+  codeLoaded: number = 0;
+  codeHtml: string = `<!-- Nav -->
+<nav [id]="styleId" class="gems-menu-x">
+  <ul class="gems-links">
+    <!-- Electron link -->
+    <li 
+      [ngClass]="'gems-electron-link gems-link gems-link-' + activeLink" 
+      [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
+    >
+      <a class="gems-link-text"></a>
+    </li>
+
+    <!-- Links -->
+    <li
+      *ngFor="let link of links; let i = index"
+      [ngClass]="'gems-link gems-link-' + i"
+      [class.active]="activeLink === i"
+      [ngStyle]="{ width: widthLink }"
+    >
+      <a (click)="click(i)" class="gems-link-text">{{ link }}</a>
+    </li>
+  </ul>
+</nav>`;
+  codeTypescript: string = `import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+@Component({
+selector: 'gems-menu-x',
+templateUrl: './menu-x.component.html',
+styleUrls: ['./menu-x.component.scss'],
+})
+export class MenuXComponent implements OnInit {
+  // Event link clicked
+  @Output() onLinkClicked = new EventEmitter<number>();
 
   // Links
-  linksLoaded: number = 0;
-  linksConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-  };
-  linksValue: string = 'html';
-  linksHtml: string = `
-    <gems-menu-x [config]="configLinks" (linkClicked)="loaded = $event"></gems-menu-x>
+  @Input() links: string[] = [];
 
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Customers loaded</p>
-      <p *ngIf="loaded === 2">Component Stats loaded</p>
-      <p *ngIf="loaded === 3">Component Settings loaded</p>
-    </div>
-  `;
-  linksTypescript: string = `
-    import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
+  // Active link
+  @Input() default: number = 0;
+  activeLink!: number;
 
-    export class MenuXComponent {
-      loaded: number = 0;
-      
-      configLinks: MenuXConfig = {
-        links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-      };
-    }
-  `;
+  // Style id
+  @Input() styleId: string = '';
 
-  // Default active
-  defaultActiveLoaded: number = 3;
-  defaultActiveConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-    activeLink: 3,
-  };
-  defaultActiveValue: string = 'html';
-  defaultActiveHtml: string = `
-    <gems-menu-x [config]="config" (linkClicked)="loaded = $event"></gems-menu-x>
+  // Dynamic style
+  translateElectronLink!: string;
+  widthLink!: string;
 
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Customers loaded</p>
-      <p *ngIf="loaded === 2">Component Stats loaded</p>
-      <p *ngIf="loaded === 3">Component Settings loaded</p>
-    </div>
-  `;
-  defaultActiveTypescript: string = `
-    import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
+  /******************************************************************************/
+  ngOnInit(): void {
+    // Default active link
+    this.activeLink = this.default;
 
-    export class MenuXComponent {
-        loaded: number = 3;
-        
-        config: MenuXConfig = {
-          links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-          activeLink: 3, // MUST BE THE SAME AS this.loaded
-        };
+    // Width
+    this.widthLink = \`calc(100% / \${this.links.length})\`;
+
+    // TranslateY electron link
+    this.translateElectronLink = \`translateX(\${this.activeLink! * 100}%)\`;
+  }
+
+  /******************************************************************************/
+  click(index: number): void {
+    // Emit
+    this.onLinkClicked.emit(index);
+
+    // Active link
+    this.activeLink = index;
+
+    // Translate electron link
+    this.translateElectronLink = \`translateX(\${this.activeLink! * 100}%)\`;
+  }
+}`;
+  codeScss: string = `// nav
+.gems-menu-x {
+  width: 100%;
+  background-color: var(--gems-bg-color);
+  border: var(--gems-border-s);
+  border-radius: var(--gems-border-radius-xl);
+  font-size: 1.75rem;
+
+  // nav ul
+  .gems-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    // nav ul li
+    .gems-link {
+      z-index: 2;
+      text-align: center;
+      list-style-type: none;
+
+      // nav ul li.electron
+      &.gems-electron-link {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: var(--gems-primary-color);
+        border-radius: var(--gems-border-radius-xl);
+        transition: 0.5s;
       }
-  `;
 
-  // Style
-  styleLoaded: number = 0;
-  styleConfig: MenuXConfig = {
-    links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-    style: {
-      fontSize: '1rem',
-      bgColor: 'lightblue',
-      fontColor: 'red',
-      activeBgColor: 'black',
-      activeFontColor: 'yellow',
-      border: '2px dashed green',
-      borderRadius: '10px',
-      paddingY: '3px',
-      transition: '2s',
-    },
-  };
-  styleValue: string = 'html';
-  styleHtml: string = `
-    <gems-menu-x [config]="config" (linkClicked)="loaded = $event"></gems-menu-x>
+      // nav ul li a
+      .gems-link-text {
+        display: block;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        color: var(--gems-primary-color);
+        transition: 0.25s;
+        &:hover {
+          cursor: pointer;
+          opacity: 50%;
+        }
+      }
 
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Customers loaded</p>
-      <p *ngIf="loaded === 2">Component Stats loaded</p>
-      <p *ngIf="loaded === 3">Component Settings loaded</p>
-    </div>
-  `;
-  styleTypescript: string = `
-    import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
-
-    export class MenuXComponent {
-      loaded: number = 0;
-
-      config: MenuXConfig = {
-        links: [{ label: 'Members' }, { label: 'Customers' }, { label: 'Stats' }, { label: 'Settings' }],
-        style: {
-          fontSize: '1rem', // Font size
-          bgColor: 'lightblue', // Background color
-          fontColor: 'red', // Font color of the not actif links
-          activeBgColor: 'black', // Background color of the electron link
-          activeFontColor: 'yellow', // Font color of the active link
-          border: '2px dashed green', // Border
-          borderRadius: '10px', // Borber radius
-          paddingY: '3px', // Verticale blank space of the links
-          transition: '2s', // Transition when clicking on a new link
-        },
-      };
-  `;
-
-  // Style Links
-  styleLinksLoaded: number = 0;
-  styleLinksConfig: MenuXConfig = {
-    links: [
-      { label: 'Members', style: { activeBgColor: 'lightgreen' } },
-      { label: 'Customers' },
-      { label: 'Stats' },
-      { label: 'Settings', style: { activeBgColor: 'orange', activeFontColor: 'yellow' } },
-    ],
-    style: {
-      fontSize: '1.5rem',
-      paddingY: '10px',
-    },
-  };
-  styleLinksValue: string = 'html';
-  styleLinksHtml: string = `
-    <gems-menu-x [config]="config" (linkClicked)="loaded = $event"></gems-menu-x>
-
-    <div style="text-align: center">
-      <p *ngIf="loaded === 0">Component Members loaded</p>
-      <p *ngIf="loaded === 1">Component Customers loaded</p>
-      <p *ngIf="loaded === 2">Component Stats loaded</p>
-      <p *ngIf="loaded === 3">Component Settings loaded</p>
-    </div>
-  `;
-  styleLinksTypescript: string = `
-    import { MenuXConfig } from '@lud0do1202/angular-gems/lib/components/menu/menu-x/menu-x-config';
-
-    export class MenuXComponent {
-      loaded: number = 0;
-
-      config: MenuXConfig = {
-        links: [
-          { label: 'Members', style: { activeBgColor: 'lightgreen' } }, // Default active font color
-          { label: 'Customers' }, // Default style
-          { label: 'Stats' }, // Default style
-          { label: 'Settings', style: { activeBgColor: 'orange', activeFontColor: 'yellow' } }, 
-        ],
-        style: {
-          fontSize: '1.5rem',
-          paddingY: '10px',
-        },
-      };
-  `;
+      // nav ul li.active
+      &.active {
+        .gems-link-text {
+          color: var(--gems-third-color);
+        }
+      }
+    }
+  }
+}`;
 }
