@@ -14,8 +14,7 @@ export class InstallationPageComponent {
   download: string = 'npm i @lud0do1202/angular-gems';
 
   // App module
-  appModule: string = `// Angular Gems
-import { MenuXModule } from '@lud0do1202/angular-gems';
+  appModule: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
 
 @NgModule({
   imports: [
@@ -25,21 +24,11 @@ import { MenuXModule } from '@lud0do1202/angular-gems';
 })
 export class AppModule {}`;
 
-  // Component
-  links: string[] = ['Members', 'Customers'];
-  loaded: number = 0;
-  value: number = 0;
-  componentHtml: string = `<gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
-
-<div style="text-align: center; margin-top: 0.5rem">
-  <p *ngIf="loaded === 0">Component 'Members' loaded</p>
-  <p *ngIf="loaded === 1">Component 'Customers' loaded</p>
-</div>`;
-  componentTypescript: string = `export class MenuXComponent {
-  // Links
-  links: string[] = ['Members', 'Customers'];
-
-  // Component to load
-  loaded: number = 0;
+  // Style
+  angularJson: string = `{
+  "styles" : [
+    ...
+    "node_modules/@lud0do1202/angular-gems/styles/gems-light.css"
+  ]
 }`;
 }

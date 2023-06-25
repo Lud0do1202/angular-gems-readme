@@ -7,37 +7,14 @@
   <app-code-area [code]="download"></app-code-area>
 </app-section>
 
-<!-- App.module -->
-<app-section [title]="'App.module.ts'">
-  <app-description>
-    To use it you have to import the <strong>module</strong> that you want to use and then add the module in the
-    <strong>imports</strong>
-  </app-description>
+<!-- Import module -->
+<app-section [title]="'Import module'">
+  <app-description> <strong>app.module.ts</strong> </app-description>
   <app-code-area [code]="appModule"></app-code-area>
 </app-section>
 
-<!-- Component -->
-<app-section [title]="'Component'">
-  <!-- Description -->
-  <app-description>
-    Use the adequate tag the implement the component and <strong>follow the documentation</strong>
-  </app-description>
-
-  <!-- Example -->
-  <app-example>
-    <gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
-
-    <div style="text-align: center; margin-top: 0.5rem">
-      <p *ngIf="loaded === 0">Component 'Sellers' loaded</p>
-      <p *ngIf="loaded === 1">Component 'Supervisor' loaded</p>
-      <p *ngIf="loaded === 2">Component 'Admins' loaded</p>
-      <p *ngIf="loaded === 3">Component 'Customers' loaded</p>
-    </div>
-  </app-example>
-  <app-spacer></app-spacer>
-  
-  <!-- Code area -->
-  <app-select [labels]="['Html', 'Typescript']" (onChange)="value = $event"></app-select>
-  <app-code-area *ngIf="value === 0" [code]="componentHtml"></app-code-area>
-  <app-code-area *ngIf="value === 1" [code]="componentTypescript"></app-code-area>
+<!-- Style -->
+<app-section [title]="'Style'">
+  <app-description> <strong>angular.json</strong> </app-description>
+  <app-code-area [code]="angularJson"></app-code-area>
 </app-section>

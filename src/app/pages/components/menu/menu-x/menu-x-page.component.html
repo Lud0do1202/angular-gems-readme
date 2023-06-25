@@ -19,7 +19,7 @@
 
   <!-- Example -->
   <app-example>
-    <gems-menu-x [styleId]="'basic-menu-x'" [id]="" [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-x>
+    <gems-menu-x [id]="" [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-x>
 
     <div style="text-align: center; margin-top: 0.5rem">
       <p *ngIf="basicLoaded === 0">Component 'Sellers' loaded</p>
