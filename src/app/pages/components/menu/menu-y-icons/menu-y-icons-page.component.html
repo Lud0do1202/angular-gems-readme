@@ -23,10 +23,10 @@
       <gems-menu-y-icons [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-y-icons>
 
       <div style="text-align: center; margin-left: 1rem">
-        <div *ngIf="basicLoaded === 0">Component 'Sellers' loaded</div>
-        <div *ngIf="basicLoaded === 1">Component 'Supervisor' loaded</div>
-        <div *ngIf="basicLoaded === 2">Component 'Admins' loaded</div>
-        <div *ngIf="basicLoaded === 3">Component 'Customers' loaded</div>
+        <div *ngIf="basicLoaded === 0">Component 'History' loaded</div>
+        <div *ngIf="basicLoaded === 1">Component 'User' loaded</div>
+        <div *ngIf="basicLoaded === 2">Component 'Calendar' loaded</div>
+        <div *ngIf="basicLoaded === 3">Component 'Chart' loaded</div>
       </div>
     </div>
   </app-example>
@@ -36,4 +36,34 @@
   <app-select [labels]="['Html', 'Typescript']" (onChange)="basicSelect = $event"></app-select>
   <app-code-area *ngIf="basicSelect === 0" [code]="basicHtml"></app-code-area>
   <app-code-area *ngIf="basicSelect === 1" [code]="basicTypescript"></app-code-area>
+</app-section>
+
+<!-- Default active link -->
+<app-section [title]="'Default active link'">
+  <!-- Description -->
+  <app-description> Set a default active link </app-description>
+
+  <!-- Example -->
+  <app-example>
+    <div style="display: flex; height: 500px">
+      <gems-menu-y-icons
+        [links]="links"
+        [default]="defaultLoaded"
+        (onLinkClicked)="defaultLoaded = $event"
+      ></gems-menu-y-icons>
+
+      <div style="text-align: center; margin-left: 1rem">
+        <div *ngIf="defaultLoaded === 0">Component 'History' loaded</div>
+        <div *ngIf="defaultLoaded === 1">Component 'User' loaded</div>
+        <div *ngIf="defaultLoaded === 2">Component 'Calendar' loaded</div>
+        <div *ngIf="defaultLoaded === 3">Component 'Chart' loaded</div>
+      </div>
+    </div>
+  </app-example>
+  <app-spacer></app-spacer>
+
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript']" (onChange)="defaultSelect = $event"></app-select>
+  <app-code-area *ngIf="defaultSelect === 0" [code]="defaultHtml"></app-code-area>
+  <app-code-area *ngIf="defaultSelect === 1" [code]="defaultTypescript"></app-code-area>
 </app-section>

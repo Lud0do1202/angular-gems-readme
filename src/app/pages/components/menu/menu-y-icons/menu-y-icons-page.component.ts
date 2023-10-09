@@ -16,24 +16,45 @@ export class MenuYIconsPageComponent {
   // Links
   links: string[] = ['pi pi-clock', 'pi pi-user', 'pi pi-calendar', 'pi pi-chart-line'];
 
-  // Basic
+  /* --------------------------------- Basic -------------------------------- */
   basicLoaded: number = 0;
   basicSelect: number = 0;
   basicHtml: string = `<gems-menu-x [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-x>
 
 <div style="text-align: center; margin-top: 1rem">
-<div *ngIf="loaded === 0">Component 'Sellers' loaded</div>
-<div *ngIf="loaded === 1">Component 'Supervisor' loaded</div>
-<div *ngIf="loaded === 2">Component 'Admins' loaded</div>
-<div *ngIf="loaded === 3">Component 'Customers' loaded</div>
+  <div *ngIf="loaded === 0">Component 'History' loaded</div>
+  <div *ngIf="loaded === 1">Component 'User' loaded</div>
+  <div *ngIf="loaded === 2">Component 'Calendar' loaded</div>
+  <div *ngIf="loaded === 3">Component 'Chart' loaded</div>
 </div>`;
-  basicTypescript: string = `import { MenuXModule } from '@lud0do1202/angular-gems';
+  basicTypescript: string = `import { MenuYIconsModule } from '@lud0do1202/angular-gems';
 
 export class DemoMenuXComponent {
-// Labels of the links
-links: string[] = ['Sellers', 'Supervisors', 'Admins', 'Customers'];
+  // Labels of the links
+  links: string[] = ['History', 'User', 'Calendar', 'Chart'];
 
-// The component to load (must be 0 if a default active link is not set)
-loaded: number = 0;
+  // The component to load (must be 0 if a default active link is not set)
+  loaded: number = 0;
+}`;
+
+  // Default
+  defaultLoaded: number = 3;
+  defaultSelect: number = 0;
+  defaultHtml: string = `<gems-menu-y-icons [links]="links" (onLinkClicked)="loaded = $event"></gems-menu-y-icons>
+
+<div style="text-align: center; margin-left: 1rem">
+  <div *ngIf="loaded === 0">Component 'History' loaded</div>
+  <div *ngIf="loaded === 1">Component 'User' loaded</div>
+  <div *ngIf="loaded === 2">Component 'Calendar' loaded</div>
+  <div *ngIf="loaded === 3">Component 'Chart' loaded</div>
+</div>`;
+  defaultTypescript: string = `import { MenuYIconsModule } from '@lud0do1202/angular-gems';
+  
+export class DemoMenuXComponent {
+  // Labels of the links
+  links: string[] = ['History', 'User', 'Calendar', 'Chart'];
+
+  // Default component to load
+  loaded: number = 3;
 }`;
 }
