@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EventRow } from 'src/app/components/events-table/event-row';
+import { PropRow } from 'src/app/components/props-table/prop-row';
 
 @Component({
   selector: 'app-menu-y-icons-page',
@@ -139,4 +141,37 @@ export class DemoMenuXComponent {
     }
   }
 }`;
+
+  /* ------------------------------- Properties ------------------------------- */
+  props: PropRow[] = [
+    {
+      name: '[links]',
+      type: 'string[]',
+      default: '[]',
+      description: 'Labels of the links',
+    },
+    {
+      name: '[default]',
+      type: 'number[]',
+      default: '0',
+      description: 'The index of the default active link',
+    },
+    {
+      name: '[styleId]',
+      type: 'string',
+      default: "' '",
+      description: 'An id a custom style',
+      comment: 'Can be used for several <gems-menu-y-icons>',
+    },
+  ];
+
+  /* --------------------------------- Events --------------------------------- */
+  events: EventRow[] = [
+    {
+      name: '(onLinkClicked)',
+      type: 'number',
+      description: 'Link has been clicked',
+      comment: 'We must update the loaded property (loaded = $event)',
+    },
+  ];
 }

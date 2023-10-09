@@ -99,3 +99,15 @@
   <app-code-area *ngIf="customSelect === 1" [code]="customTypescript"></app-code-area>
   <app-code-area *ngIf="customSelect === 2" [code]="customScss"></app-code-area>
 </app-section>
+
+<!-- ----------------------------- Properties ------------------------------ -->
+<app-section [title]="'Properties'">
+  <app-description>The <strong>@Input( )</strong> of &lt;gems-menu-x></app-description>
+  <app-props-table [props]="props"></app-props-table>
+</app-section>
+
+<!-- ------------------------------- Events -------------------------------- -->
+<app-section [title]="'Events'">
+  <app-description>The <strong>@Output( )</strong> of &lt;gems-menu-x></app-description>
+  <app-events-table [events]="events"></app-events-table>
+</app-section>
