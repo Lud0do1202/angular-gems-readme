@@ -174,4 +174,146 @@ export class DemoMenuXComponent {
       comment: 'We must update the loaded property (loaded = $event)',
     },
   ];
+
+  /* --------------------------------- Code --------------------------------- */
+  codeLoaded: number = 0;
+  codeHtml: string = `<!-- Nav -->
+<nav [id]="styleId" class="gems-menu-y-icons">
+  <ul class="gems-list">
+    <!-- Electron link -->
+    <li
+      [ngClass]="'gems-item gems-electron-item gems-item-' + activeLink"
+      [ngStyle]="{ height: heightLink, transform: translateElectronLink }"
+    >
+      <a class="gems-link"> </a>
+    </li>
+
+    <!-- Links -->
+    <li
+      *ngFor="let link of links; let i = index"
+      [ngClass]="'gems-item gems-item-' + i"
+      [class.active]="activeLink === i"
+      [ngStyle]="{ height: heightLink }"
+    >
+      <a (click)="click(i)" class="gems-link">
+        <i [class]="'gems-icon ' + link"></i>
+      </a>
+    </li>
+  </ul>
+</nav>`;
+  codeTypescript: string = `import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+@Component({
+  selector: 'gems-menu-y-icons',
+  templateUrl: './menu-y-icons.component.html',
+  styleUrls: ['./menu-y-icons.component.scss'],
+})
+export class MenuYIconsComponent implements OnInit {
+  // Event link clicked
+  @Output() onLinkClicked = new EventEmitter<number>();
+
+  // Links (icons)
+  @Input() links: string[] = [];
+
+  // Active link
+  @Input() default: number = 0;
+  activeLink!: number;
+
+  // Style id
+  @Input() styleId: string = '';
+
+  // Dynamic style
+  translateElectronLink!: string;
+  heightLink!: string;
+
+  /******************************************************************************/
+  ngOnInit(): void {
+    // Default active link
+    this.activeLink = this.default;
+
+    // Height link
+    this.heightLink = \`calc(100%/\${this.links.length})\`;
+
+    // Translate electron link
+    this.translateElectronLink = \`translateY(\${this.activeLink! * 100}%)\`;
+  }
+
+  /******************************************************************************/
+  click(index: number): void {
+    // Emit
+    this.onLinkClicked.emit(index);
+
+    // Active link
+    this.activeLink = index;
+
+    // Translate electron link
+    this.translateElectronLink = \`translateY(\${this.activeLink! * 100}%)\`;
+  }
+}`;
+  codeScss: string = `// <nav> : menu-y-icons
+.gems-menu-y-icons {
+  height: 100%;
+  width: fit-content;
+  font-size: 1.75rem;
+  background-color: var(--gems-color-4);
+  border: 1px solid var(--gems-color-3);
+  border-radius: var(--gems-border-radius-m);
+
+  // <ul> : list of the links
+  .gems-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    // <li> : one item of the list
+    .gems-item {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // <li class="gems-electron-item"> : the item which move
+      &.gems-electron-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+        width: 100%;
+
+        .gems-link {
+          z-index: 1;
+          background-color: var(--gems-color-3);
+        }
+      }
+
+      // <li class="active"> : The item which is related to the active link
+      &.active {
+        .gems-link {
+          color: var(--gems-color-1);
+        }
+      }
+
+      // <a> : The link of an item
+      .gems-link {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem;
+        color: var(--gems-color-2);
+        border: 1px solid transparent;
+        border-radius: var(--gems-border-radius-m);
+        transition: 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          border: 1px solid var(--gems-color-2);
+        }
+      }
+    }
+  }
+}`;
 }

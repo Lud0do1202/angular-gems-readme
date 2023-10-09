@@ -111,3 +111,15 @@
   <app-description>The <strong>@Output( )</strong> of &lt;gems-menu-x></app-description>
   <app-events-table [events]="events"></app-events-table>
 </app-section>
+
+<!-- Code -->
+<app-section [title]="'Code'">
+  <!-- Description -->
+  <app-description> Get inside my head and see through my code </app-description>
+
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="codeLoaded = $event"></app-select>
+  <app-code-area *ngIf="codeLoaded === 0" [code]="codeHtml"></app-code-area>
+  <app-code-area *ngIf="codeLoaded === 1" [code]="codeTypescript"></app-code-area>
+  <app-code-area *ngIf="codeLoaded === 2" [code]="codeScss"></app-code-area>
+</app-section>
