@@ -1,0 +1,39 @@
+<!-- Title -->
+<app-title [title]="title" [description]="description"></app-title>
+
+<!-- Import section -->
+<app-section [title]="'Import'">
+  <!-- Description -->
+  <app-description>
+    Add this line in <strong>app.module.ts</strong> and the module in <strong>imports</strong>
+  </app-description>
+
+  <!-- Code area -->
+  <app-code-area [code]="import"></app-code-area>
+</app-section>
+
+<!-- Basic -->
+<app-section [title]="'Basic'">
+  <!-- Description -->
+  <app-description> A basic example of <strong>&lt;gems-menu-y-icons></strong> </app-description>
+
+  <!-- Example -->
+  <app-example>
+    <div style="display: flex; height: 500px">
+      <gems-menu-y-icons [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-y-icons>
+
+      <div style="text-align: center; margin-left: 1rem">
+        <div *ngIf="basicLoaded === 0">Component 'Sellers' loaded</div>
+        <div *ngIf="basicLoaded === 1">Component 'Supervisor' loaded</div>
+        <div *ngIf="basicLoaded === 2">Component 'Admins' loaded</div>
+        <div *ngIf="basicLoaded === 3">Component 'Customers' loaded</div>
+      </div>
+    </div>
+  </app-example>
+  <app-spacer></app-spacer>
+
+  <!-- Code area -->
+  <app-select [labels]="['Html', 'Typescript']" (onChange)="basicSelect = $event"></app-select>
+  <app-code-area *ngIf="basicSelect === 0" [code]="basicHtml"></app-code-area>
+  <app-code-area *ngIf="basicSelect === 1" [code]="basicTypescript"></app-code-area>
+</app-section>

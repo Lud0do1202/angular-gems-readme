@@ -28,16 +28,20 @@ export class NavComponent implements OnInit {
       {
         label: 'Components',
         icon: 'pi pi-fw pi-compass',
-        ...this.expanded(['/components/menu/menu-x']),
+        ...this.expanded(['/components/menu/menu-x', 'components/menu/menu-y-icons']),
         items: [
           {
             label: 'Menu',
             styleClass: 'subpanel',
-            ...this.expanded(['/components/menu/menu-x']),
+            ...this.expanded(['/components/menu/menu-x', 'components/menu/menu-y-icons']),
             items: [
               {
                 label: 'Menu X',
                 routerLink: '/components/menu/menu-x',
+              },
+              {
+                label: 'Menu Y Icons',
+                routerLink: 'components/menu/menu-y-icons',
               },
             ],
           },

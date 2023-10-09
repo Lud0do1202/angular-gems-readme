@@ -84,31 +84,32 @@ export class DemoMenuXComponent {
   customScss: string = `// Use :host ::ng-deep or use a global style
 // The style id (You can use this id for several <gems-menu-x>)
 :host ::ng-deep #custom-menu-x {
-  // nav
+  // <nav> : menu-x
   &.gems-menu-x {
     background-color: lightseagreen;
     border: 3px solid grey;
 
-    // nav ul
-    .gems-links {
-      // nav ul li (All links)
-      .gems-link {
-        // The electron link
-        &.gems-electron-link {
+    // <ul> : list of the links
+    .gems-list {
+
+      // <li> : one item of the list
+      .gems-item {
+
+        // <li class="gems-electron-item"> : the item which move
+        &.gems-electron-item {
           background-color: lightgreen;
         }
 
-        // The <li></li> active
+        // <li class="active"> : The item which is related to the active link
         &.active {
-          // The <a></a> of the link active
-          .gems-link-text {
+          .gems-link {
             font-size: 1.5rem;
             color: darkgreen;
           }
         }
 
-        // The <a></a> of a link
-        .gems-link-text {
+        // <a> : The link of an item
+        .gems-link {
           padding: 0.5rem 0;
           transition: none;
           font-size: 1rem;
@@ -122,35 +123,31 @@ export class DemoMenuXComponent {
       }
 
       // Style for the second link
-      .gems-link-1 {
-        // The electron link when the second link is active
-        &.gems-electron-link {
+      .gems-item-1 {
+        &.gems-electron-item {
           background-color: lightsalmon;
         }
 
-        // The <li></li> of the second link when it's active
         &.active {
-          // The <a></a> of the second link when it's active
-          .gems-link-text {
+          .gems-link {
             color: orangered;
           }
         }
 
-        // The <a></a> of the second link
-        .gems-link-text {
+        .gems-link {
           color: gold;
         }
       }
 
       // Style for the third link
-      .gems-link-2 {
+      .gems-item-2 {
         &.active {
-          .gems-link-text {
+          .gems-link {
             text-decoration: line-through;
             color: lightcoral;
           }
         }
-        .gems-link-text {
+        .gems-link {
           &:hover {
             text-shadow: gold 0 0 5px;
           }
@@ -197,25 +194,23 @@ export class DemoMenuXComponent {
   codeLoaded: number = 0;
   codeHtml: string = `<!-- Nav -->
 <nav [id]="styleId" class="gems-menu-x">
-  <ul class="gems-links">
+  <ul class="gems-list">
     <!-- Electron link -->
     <li
-      [ngClass]="'gems-electron-link gems-link gems-link-' + activeLink"
+      [ngClass]="'gems-item gems-electron-item gems-item-' + activeLink"
       [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
     >
-      <a class="gems-link-text"></a>
+      <a class="gems-link"></a>
     </li>
 
     <!-- Links -->
     <li
       *ngFor="let link of links; let i = index"
-      [ngClass]="'gems-link gems-link-' + i"
+      [ngClass]="'gems-item gems-item-' + i"
       [class.active]="activeLink === i"
       [ngStyle]="{ width: widthLink }"
     >
-      <a (click)="click(i)" class="gems-link-text">
-        {{ link }}
-      </a>
+      <a (click)="click(i)" class="gems-link"> {{ link }} </a>
     </li>
   </ul>
 </nav>`;
@@ -252,7 +247,7 @@ export class MenuXComponent implements OnInit {
     // Width
     this.widthLink = \`calc(100% / \${this.links.length})\`;
 
-    // TranslateY electron link
+    // Translate electron link
     this.translateElectronLink = \`translateX(\${this.activeLink! * 100}%)\`;
   }
 
@@ -268,7 +263,7 @@ export class MenuXComponent implements OnInit {
     this.translateElectronLink = \`translateX(\${this.activeLink! * 100}%)\`;
   }
 }`;
-  codeScss: string = `// nav
+  codeScss: string = `// <nav> : menu-x
 .gems-menu-x {
   width: 100%;
   background-color: var(--gems-color-4);
@@ -276,8 +271,8 @@ export class MenuXComponent implements OnInit {
   border-radius: var(--gems-border-radius-xl);
   font-size: 1.75rem;
 
-  // nav ul
-  .gems-links {
+  // <ul> : list of the links
+  .gems-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -286,14 +281,14 @@ export class MenuXComponent implements OnInit {
     padding: 0;
     position: relative;
 
-    // nav ul li
-    .gems-link {
+    // <li> : one item of the list
+    .gems-item {
       z-index: 2;
       text-align: center;
       list-style-type: none;
 
-      // nav ul li.electron
-      &.gems-electron-link {
+      // <li class="gems-electron-item"> : the item which move
+      &.gems-electron-item {
         z-index: 1;
         position: absolute;
         top: 0;
@@ -304,8 +299,15 @@ export class MenuXComponent implements OnInit {
         transition: 0.5s;
       }
 
-      // nav ul li a
-      .gems-link-text {
+      // <li class="active"> : The item which is related to the active link
+      &.active {
+        .gems-link {
+          color: var(--gems-color-5);
+        }
+      }
+
+      // <a> : The link of an item
+      .gems-link {
         display: block;
         text-decoration: none;
         padding: 0.5rem 0;
@@ -314,13 +316,6 @@ export class MenuXComponent implements OnInit {
         &:hover {
           cursor: pointer;
           opacity: 50%;
-        }
-      }
-
-      // nav ul li.active
-      &.active {
-        .gems-link-text {
-          color: var(--gems-color-5);
         }
       }
     }

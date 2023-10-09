@@ -6,6 +6,7 @@ import { PageFoundComponent } from './pages/page-found/page-found.component';
 import { InstallationPageComponent } from './pages/get-started/installation/installation-page.component';
 import { DonationPageComponent } from './pages/more/donation/donation-page.component';
 import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
+import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-page.component';
 
 const routes: Routes = [
   // Default
@@ -21,6 +22,7 @@ const routes: Routes = [
 
       // Component
       { path: 'components/menu/menu-x', component: MenuXPageComponent },
+      { path: 'components/menu/menu-y-icons', component : MenuYIconsPageComponent},
 
       // More
       { path: 'more/donation', component: DonationPageComponent },

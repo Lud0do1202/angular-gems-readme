@@ -23,6 +23,7 @@ import { TableModule } from 'primeng/table';
 
 // Angular Gems
 import { MenuXModule } from '@lud0do1202/angular-gems';
+import { MenuYIconsModule } from '@lud0do1202/angular-gems';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +47,7 @@ import { SelectComponent } from './components/select/select.component';
 import { ExampleComponent } from './components/example/example.component';
 import { PropsTableComponent } from './components/props-table/props-table.component';
 import { EventsTableComponent } from './components/events-table/events-table.component';
+import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-page.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,7 @@ import { EventsTableComponent } from './components/events-table/events-table.com
     ExampleComponent,
     PropsTableComponent,
     EventsTableComponent,
+    MenuYIconsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { EventsTableComponent } from './components/events-table/events-table.com
     ClipboardModule,
     ToastModule,
     NgxPayPalModule,
+    MenuYIconsModule,
     HighlightModule,
   ],
   providers: [

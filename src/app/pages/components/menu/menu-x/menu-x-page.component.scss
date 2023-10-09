@@ -1,31 +1,32 @@
 // Use :host ::ng-deep or use a global style
 // The style id (You can use this id for several <gems-menu-x>)
 :host ::ng-deep #custom-menu-x {
-  // nav
+  // <nav> : menu-x
   &.gems-menu-x {
     background-color: lightseagreen;
     border: 3px solid grey;
 
-    // nav ul
-    .gems-links {
-      // nav ul li (Default)
-      .gems-link {
-        // The electron link
-        &.gems-electron-link {
+    // <ul> : list of the links
+    .gems-list {
+
+      // <li> : one item of the list
+      .gems-item {
+
+        // <li class="gems-electron-item"> : the item which move
+        &.gems-electron-item {
           background-color: lightgreen;
         }
 
-        // The <li></li> active
+        // <li class="active"> : The item which is related to the active link
         &.active {
-          // The <a></a> of the link active
-          .gems-link-text {
+          .gems-link {
             font-size: 1.5rem;
             color: darkgreen;
           }
         }
 
-        // The <a></a> of a link
-        .gems-link-text {
+        // <a> : The link of an item
+        .gems-link {
           padding: 0.5rem 0;
           transition: none;
           font-size: 1rem;
@@ -39,35 +40,31 @@
       }
 
       // Style for the second link
-      .gems-link-1 {
-        // The electron link when the second link is active
-        &.gems-electron-link {
+      .gems-item-1 {
+        &.gems-electron-item {
           background-color: lightsalmon;
         }
 
-        // The <li></li> of the second link when it's active
         &.active {
-          // The <a></a> of the second link when it's active
-          .gems-link-text {
+          .gems-link {
             color: orangered;
           }
         }
 
-        // The <a></a> of the second link
-        .gems-link-text {
+        .gems-link {
           color: gold;
         }
       }
 
       // Style for the third link
-      .gems-link-2 {
+      .gems-item-2 {
         &.active {
-          .gems-link-text {
+          .gems-link {
             text-decoration: line-through;
             color: lightcoral;
           }
         }
-        .gems-link-text {
+        .gems-link {
           &:hover {
             text-shadow: gold 0 0 5px;
           }
