@@ -23,6 +23,7 @@ const routes: Routes = [
       // Component
       { path: 'components/menu/menu-x', component: MenuXPageComponent },
       { path: 'components/menu/menu-y-icons', component : MenuYIconsPageComponent},
+      // { path: 'components/data/search-bar'}
 
       // More
       { path: 'more/donation', component: DonationPageComponent },

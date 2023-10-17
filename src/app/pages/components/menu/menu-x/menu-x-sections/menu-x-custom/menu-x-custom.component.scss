@@ -1,0 +1,81 @@
+/* ========================================================================== */
+/*                                CUSTOM MENU X                               */
+/* ========================================================================== */
+:host ::ng-deep #custom-menu-x {
+  &.gems-menu-x {
+    background-color: lightseagreen;
+    border: 3px solid grey;
+
+    /* --------------------------------- <ul> --------------------------------- */
+    .gems-list {
+      /* -------------------------------- <li> -------------------------------- */
+      .gems-item {
+        /* ------------------ <li class="gems-electron-item"> ----------------- */
+        &.gems-electron-item {
+          background-color: lightgreen;
+        }
+
+        /* ------------------------ <li class="active"> ----------------------- */
+        &.active {
+          /* ------------------------------- <a> ------------------------------ */
+          .gems-link {
+            font-size: 1.5rem;
+            color: darkgreen;
+          }
+        }
+
+        /* -------------------------------- <a> ------------------------------- */
+        .gems-link {
+          padding: 0.5rem 0;
+          transition: none;
+          font-size: 1rem;
+          color: black;
+
+          // Hover
+          &:hover {
+            opacity: 1;
+            font-weight: bold;
+          }
+        }
+      }
+
+      /* --------------------- <li class=".gems-item-1"> -------------------- */
+      .gems-item-1 {
+        /* ------------------ <li class="gems-electron-item"> ----------------- */
+        &.gems-electron-item {
+          background-color: lightsalmon;
+        }
+
+        /* ------------------------ <li class="active"> ----------------------- */
+        &.active {
+          /* ------------------------------- <a> ------------------------------ */
+          .gems-link {
+            color: orangered;
+          }
+        }
+
+        /* -------------------------------- <a> ------------------------------- */
+        .gems-link {
+          color: gold;
+        }
+      }
+
+      /* --------------------- <li class=".gems-item-2"> -------------------- */
+      .gems-item-2 {
+        /* ------------------------ <li class="active"> ----------------------- */
+        &.active {
+          /* ------------------------------- <a> ------------------------------ */
+          .gems-link {
+            text-decoration: line-through;
+            color: lightcoral;
+          }
+        }
+
+        /* -------------------------------- <a> ------------------------------- */
+        .gems-link {
+          text-shadow: gold 0 0 5px;
+        }
+      }
+    }
+  }
+}

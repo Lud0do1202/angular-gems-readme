@@ -22,8 +22,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 
 // Angular Gems
-import { MenuXModule } from '@lud0do1202/angular-gems';
-import { MenuYIconsModule } from '@lud0do1202/angular-gems';
+import { MenuXModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
+import { MenuYIconsModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
+import { SearchBarModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -48,6 +49,12 @@ import { ExampleComponent } from './components/example/example.component';
 import { PropsTableComponent } from './components/props-table/props-table.component';
 import { EventsTableComponent } from './components/events-table/events-table.component';
 import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-page.component';
+import { MenuXBasicComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-basic/menu-x-basic.component';
+import { SectionImportComponent } from './components/section-import/section-import.component';
+import { MenuXDefaultActiveLinkComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-default-active-link/menu-x-default-active-link.component';
+import { MenuXCustomComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-custom/menu-x-custom.component';
+import { MenuXConfigurationComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-configuration/menu-x-configuration.component';
+import { MenuXEventsComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-events/menu-x-events.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +78,12 @@ import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/me
     PropsTableComponent,
     EventsTableComponent,
     MenuYIconsPageComponent,
+    MenuXBasicComponent,
+    SectionImportComponent,
+    MenuXDefaultActiveLinkComponent,
+    MenuXCustomComponent,
+    MenuXConfigurationComponent,
+    MenuXEventsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +103,7 @@ import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/me
     NgxPayPalModule,
     MenuYIconsModule,
     HighlightModule,
+    SearchBarModule,
   ],
   providers: [
     {

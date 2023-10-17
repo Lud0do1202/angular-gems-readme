@@ -1,0 +1,46 @@
+<!-- ======================================================================= -->
+<!--                             MENU X : CUSTOM                             -->
+<!-- ======================================================================= -->
+<app-section title="Custom">
+  <!-- --------------------------- Description --------------------------- -->
+  <app-description>
+    Let your imagination create the most beautiful component
+  </app-description>
+
+  <!-- ------------------------------ Example ------------------------------ -->
+  <app-example>
+    <!-- gems-menu-x -->
+    <gems-menu-x
+      [config]="config"
+      (onLinkClicked)="loaded = $event"
+    ></gems-menu-x>
+
+    <!-- links -->
+    <div style="text-align: center; margin-top: 1rem">
+      <div *ngIf="loaded === 0">Component 'Javascript' loaded</div>
+      <div *ngIf="loaded === 1">Component 'Html/CSS' loaded</div>
+      <div *ngIf="loaded === 2">Component 'Java' loaded</div>
+      <div *ngIf="loaded === 3">Component 'Python' loaded</div>
+    </div>
+  </app-example>
+  <app-spacer></app-spacer>
+
+  <!-- ----------------------------- Code Area ----------------------------- -->
+  <!-- select -->
+  <app-select
+    [labels]="['Html', 'Typescript', 'SCSS']"
+    (onChange)="codeAreaSelect = $event"
+  ></app-select>
+
+  <!-- html -->
+  <app-code-area *ngIf="codeAreaSelect === 0" [code]="html"></app-code-area>
+
+  <!-- typescript -->
+  <app-code-area
+    *ngIf="codeAreaSelect === 1"
+    [code]="typescript"
+  ></app-code-area>
+
+  <!-- scss -->
+  <app-code-area *ngIf="codeAreaSelect === 2" [code]="scss"></app-code-area>
+</app-section>
