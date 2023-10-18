@@ -1,24 +1,28 @@
 <!-- ======================================================================= -->
-<!--                      MENU X : DEFAULT ACTIVE LINK                       -->
+<!--                          MENU Y ICONS : BASIC                           -->
 <!-- ======================================================================= -->
-<app-section title="Default active link">
+<app-section title="Basic">
   <!-- --------------------------- Description --------------------------- -->
-  <app-description> Set the default active link </app-description>
+  <app-description>
+    A basic example of <strong>&lt;gems-menu-y-icons></strong>
+  </app-description>
 
   <!-- ------------------------------ Example ------------------------------ -->
   <app-example>
-    <!-- gems-menu-x -->
-    <gems-menu-x
-      [config]="config"
-      (onLinkClicked)="loaded = $event"
-    ></gems-menu-x>
+    <div style="display: flex; height: 500px">
+      <!-- gems-menu-y-icons -->
+      <gems-menu-y-icons
+        [config]="config"
+        (onLinkClicked)="loaded = $event"
+      ></gems-menu-y-icons>
 
-    <!-- links -->
-    <div style="text-align: center; margin-top: 1rem">
-      <div *ngIf="loaded === 0">Component 'Javascript' loaded</div>
-      <div *ngIf="loaded === 1">Component 'Html/CSS' loaded</div>
-      <div *ngIf="loaded === 2">Component 'Java' loaded</div>
-      <div *ngIf="loaded === 3">Component 'Python' loaded</div>
+      <!-- links -->
+      <div style="text-align: center; margin-left: 1rem">
+        <div *ngIf="loaded === 0">Component 'Javascript' loaded</div>
+        <div *ngIf="loaded === 1">Component 'Html/CSS' loaded</div>
+        <div *ngIf="loaded === 2">Component 'Java' loaded</div>
+        <div *ngIf="loaded === 3">Component 'Python' loaded</div>
+      </div>
     </div>
   </app-example>
   <app-spacer></app-spacer>

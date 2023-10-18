@@ -8,13 +8,18 @@ import { MenuXConfig } from '@lud0do1202/angular-gems';
 })
 export class MenuXCustomComponent {
   /* ------------------------------- Component ------------------------------ */
-  // The ref to know which component is loaded
+  // The ref to know which component is loaded (init -> default)
   loaded: number = 0;
 
   // The config
   config: MenuXConfig = {
+    // The labels of the links
     links: ['Javascript', 'Html/CSS', 'Java', 'Python'],
+
+    // Set the default link
     defaultActiveLink: this.loaded,
+
+    // The style id (can be used several times)
     styleId: 'custom-menu-x',
   };
 
@@ -41,19 +46,20 @@ export class MenuXCustomComponent {
   typescript: string = `import { MenuXConfig } from '@lud0do1202/angular-gems';
   
 export class DemoMenuXComponent {
-  // The ref to know which component is loaded
+  // The ref to know which component is loaded (init -> default)
   loaded: number = 0;
 
   // The config
   config: MenuXConfig = {
-    // The links
+    // The labels of the links
     links: ['Javascript', 'Html/CSS', 'Java', 'Python'],
 
-    // The default component = the ref loaded
+    // Set the default link
     defaultActiveLink: this.loaded,
 
-    // The style id (can be used several times on differents components)
-    styleId: 'custom-menu-x'
+    // The style id (can be used several times)
+    styleId: 'custom-menu-x',
+  };
 }`;
 
   // Scss

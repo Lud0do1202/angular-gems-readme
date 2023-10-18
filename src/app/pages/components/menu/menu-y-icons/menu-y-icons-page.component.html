@@ -1,125 +1,17 @@
-<!-- Title -->
-<app-title [title]="title" [description]="description"></app-title>
+<!-- -------------------------------- Title -------------------------------- -->
+<app-title title="Menu Y Icons"></app-title>
 
 <!-- --------------------------- Import Section ---------------------------- -->
-<app-section [title]="'Import'">
-  <!-- Description -->
-  <app-description>
-    Add this line in <strong>app.module.ts</strong> and the module in <strong>imports</strong>
-  </app-description>
-
-  <!-- Code area -->
-  <app-code-area [code]="import"></app-code-area>
-</app-section>
+<app-section-import [import]="import"></app-section-import>
 
 <!-- -------------------------------- Basic -------------------------------- -->
-<app-section [title]="'Basic'">
-  <!-- Description -->
-  <app-description> A basic example of <strong>&lt;gems-menu-y-icons></strong> </app-description>
-
-  <!-- Example -->
-  <app-example>
-    <div style="display: flex; height: 500px">
-      <!-- <gems-menu-y-icons [links]="links" (onLinkClicked)="basicLoaded = $event"></gems-menu-y-icons> -->
-
-      <div style="text-align: center; margin-left: 1rem">
-        <div *ngIf="basicLoaded === 0">Component 'History' loaded</div>
-        <div *ngIf="basicLoaded === 1">Component 'User' loaded</div>
-        <div *ngIf="basicLoaded === 2">Component 'Calendar' loaded</div>
-        <div *ngIf="basicLoaded === 3">Component 'Chart' loaded</div>
-      </div>
-    </div>
-  </app-example>
-  <app-spacer></app-spacer>
-
-  <!-- Code area -->
-  <app-select [labels]="['Html', 'Typescript']" (onChange)="basicSelect = $event"></app-select>
-  <app-code-area *ngIf="basicSelect === 0" [code]="basicHtml"></app-code-area>
-  <app-code-area *ngIf="basicSelect === 1" [code]="basicTypescript"></app-code-area>
-</app-section>
-
-<!-- ------------------------- Default Active Link ------------------------- -->
-<app-section [title]="'Default active link'">
-  <!-- Description -->
-  <app-description> Set a default active link </app-description>
-
-  <!-- Example -->
-  <app-example>
-    <div style="display: flex; height: 500px">
-      <!-- <gems-menu-y-icons
-        [links]="links"
-        [default]="defaultLoaded"
-        (onLinkClicked)="defaultLoaded = $event"
-      ></gems-menu-y-icons> -->
-
-      <div style="text-align: center; margin-left: 1rem">
-        <div *ngIf="defaultLoaded === 0">Component 'History' loaded</div>
-        <div *ngIf="defaultLoaded === 1">Component 'User' loaded</div>
-        <div *ngIf="defaultLoaded === 2">Component 'Calendar' loaded</div>
-        <div *ngIf="defaultLoaded === 3">Component 'Chart' loaded</div>
-      </div>
-    </div>
-  </app-example>
-  <app-spacer></app-spacer>
-
-  <!-- Code area -->
-  <app-select [labels]="['Html', 'Typescript']" (onChange)="defaultSelect = $event"></app-select>
-  <app-code-area *ngIf="defaultSelect === 0" [code]="defaultHtml"></app-code-area>
-  <app-code-area *ngIf="defaultSelect === 1" [code]="defaultTypescript"></app-code-area>
-</app-section>
+<app-menu-y-icons-basic></app-menu-y-icons-basic>
 
 <!-- ------------------------------- Custom -------------------------------- -->
-<!-- Custom -->
-<app-section [title]="'Custom'">
-  <!-- Description -->
-  <app-description> Let your imagination create the most beautiful menu </app-description>
-
-  <!-- Example -->
-  <app-example>
-    <div style="display: flex; height: 500px">
-      <!-- <gems-menu-y-icons
-        [styleId]="'custom-menu-y-icons'"
-        [links]="links"
-        (onLinkClicked)="defaultLoaded = $event"
-      ></gems-menu-y-icons> -->
-
-      <div style="text-align: center; margin-left: 1rem">
-        <div *ngIf="defaultLoaded === 0">Component 'History' loaded</div>
-        <div *ngIf="defaultLoaded === 1">Component 'User' loaded</div>
-        <div *ngIf="defaultLoaded === 2">Component 'Calendar' loaded</div>
-        <div *ngIf="defaultLoaded === 3">Component 'Chart' loaded</div>
-      </div>
-    </div>
-  </app-example>
-  <app-spacer></app-spacer>
-
-  <!-- Code area -->
-  <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="customSelect = $event"></app-select>
-  <app-code-area *ngIf="customSelect === 0" [code]="customHtml"></app-code-area>
-  <app-code-area *ngIf="customSelect === 1" [code]="customTypescript"></app-code-area>
-  <app-code-area *ngIf="customSelect === 2" [code]="customScss"></app-code-area>
-</app-section>
+<app-menu-y-icons-custom></app-menu-y-icons-custom>
 
 <!-- ----------------------------- Properties ------------------------------ -->
-<app-section [title]="'Properties'">
-  <app-description>The <strong>@Input( )</strong> of &lt;gems-menu-x></app-description>
-  <app-props-table [props]="props"></app-props-table>
-</app-section>
+<app-menu-y-icons-configuration></app-menu-y-icons-configuration>
 
 <!-- ------------------------------- Events -------------------------------- -->
-<app-section [title]="'Events'">
-  <app-description>The <strong>@Output( )</strong> of &lt;gems-menu-x></app-description>
-  <app-events-table [events]="events"></app-events-table>
-</app-section>
-
-<!-- Code -->
-<app-section [title]="'Code'">
-  <!-- Description -->
-  <app-description> Get inside my head and see through my code </app-description>
-
-  <!-- Code area -->
-  <app-select [labels]="['Html', 'Typescript', 'SCSS']" (onChange)="codeLoaded = $event"></app-select>
-  <app-code-area *ngIf="codeLoaded === 0" [code]="codeHtml"></app-code-area>
-  <app-code-area *ngIf="codeLoaded === 1" [code]="codeTypescript"></app-code-area>
-  <app-code-area *ngIf="codeLoaded === 2" [code]="codeScss"></app-code-area>
-</app-section>
+<app-menu-y-icons-events></app-menu-y-icons-events>

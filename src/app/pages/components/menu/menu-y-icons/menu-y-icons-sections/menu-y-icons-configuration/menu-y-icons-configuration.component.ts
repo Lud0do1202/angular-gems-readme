@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { PropRow } from 'src/app/components/props-table/prop-row';
 
 @Component({
-  selector: 'app-menu-x-configuration',
-  templateUrl: './menu-x-configuration.component.html',
-  styleUrls: ['./menu-x-configuration.component.scss'],
+  selector: 'app-menu-y-icons-configuration',
+  templateUrl: './menu-y-icons-configuration.component.html',
+  styleUrls: ['./menu-y-icons-configuration.component.scss'],
 })
-export class MenuXConfigurationComponent {
+export class MenuYIconsConfigurationComponent {
   /* --------------------------- Properties Config -------------------------- */
   props: PropRow[] = [
     {

@@ -22,9 +22,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 
 // Angular Gems
-import { MenuXModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
-import { MenuYIconsModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
-import { SearchBarModule } from '../../../angular-gems/dist/lud0do1202/angular-gems/';
+import { MenuXModule } from '@lud0do1202/angular-gems';
+import { MenuYIconsModule } from '@lud0do1202/angular-gems';
+import { SearchBarModule } from '@lud0do1202/angular-gems';
 
 // Components
 import { AppRoutingModule } from './app-routing.module';
@@ -51,10 +51,13 @@ import { EventsTableComponent } from './components/events-table/events-table.com
 import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-page.component';
 import { MenuXBasicComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-basic/menu-x-basic.component';
 import { SectionImportComponent } from './components/section-import/section-import.component';
-import { MenuXDefaultActiveLinkComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-default-active-link/menu-x-default-active-link.component';
 import { MenuXCustomComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-custom/menu-x-custom.component';
 import { MenuXConfigurationComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-configuration/menu-x-configuration.component';
 import { MenuXEventsComponent } from './pages/components/menu/menu-x/menu-x-sections/menu-x-events/menu-x-events.component';
+import { MenuYIconsBasicComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-basic/menu-y-icons-basic.component';
+import { MenuYIconsCustomComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-custom/menu-y-icons-custom.component';
+import { MenuYIconsConfigurationComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-configuration/menu-y-icons-configuration.component';
+import { MenuYIconsEventsComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-events/menu-y-icons-events.component';
 
 @NgModule({
   declarations: [
@@ -80,10 +83,13 @@ import { MenuXEventsComponent } from './pages/components/menu/menu-x/menu-x-sect
     MenuYIconsPageComponent,
     MenuXBasicComponent,
     SectionImportComponent,
-    MenuXDefaultActiveLinkComponent,
     MenuXCustomComponent,
     MenuXConfigurationComponent,
     MenuXEventsComponent,
+    MenuYIconsBasicComponent,
+    MenuYIconsCustomComponent,
+    MenuYIconsConfigurationComponent,
+    MenuYIconsEventsComponent,
   ],
   imports: [
     BrowserModule,

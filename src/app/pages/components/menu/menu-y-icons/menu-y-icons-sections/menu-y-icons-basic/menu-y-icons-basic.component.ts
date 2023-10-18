@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { MenuXConfig } from '@lud0do1202/angular-gems';
+import { MenuYIconsConfig } from '@lud0do1202/angular-gems';
 
 @Component({
-  selector: 'app-menu-x-basic',
-  templateUrl: './menu-x-basic.component.html',
-  styleUrls: ['./menu-x-basic.component.scss'],
+  selector: 'app-menu-y-icons-basic',
+  templateUrl: './menu-y-icons-basic.component.html',
+  styleUrls: ['./menu-y-icons-basic.component.scss'],
 })
-export class MenuXBasicComponent {
+export class MenuYIconsBasicComponent {
   /* ------------------------------- Component ------------------------------ */
   // The ref to know which component is loaded (init -> default)
   loaded: number = 0;
 
   // The config
-  config: MenuXConfig = {
+  config: MenuYIconsConfig = {
     // The labels of the links
     links: ['Javascript', 'Html/CSS', 'Java', 'Python'],
 
@@ -25,22 +25,24 @@ export class MenuXBasicComponent {
   codeAreaSelect: number = 0;
 
   // Html
-  html: string = `<!-- gems-menu-x -->
-  <gems-menu-x
+  html: string = `<div style="display: flex; height: 500px">
+  <!-- gems-menu-y-icons -->
+  <gems-menu-y-icons
     [config]="config"
     (onLinkClicked)="loaded = $event"
-  ></gems-menu-x>
+  ></gems-menu-y-icons>
 
   <!-- links -->
-  <div style="text-align: center; margin-top: 1rem">
+  <div style="text-align: center; margin-left: 1rem">
     <div *ngIf="loaded === 0">Component 'Javascript' loaded</div>
     <div *ngIf="loaded === 1">Component 'Html/CSS' loaded</div>
     <div *ngIf="loaded === 2">Component 'Java' loaded</div>
     <div *ngIf="loaded === 3">Component 'Python' loaded</div>
-  </div>`;
+  </div>
+</div>`;
 
   // Typescript
-  typescript: string = `import { MenuXConfig } from '@lud0do1202/angular-gems';
+  typescript: string = `import { MenuYIconsConfig } from '@lud0do1202/angular-gems';
   
 export class DemoMenuXComponent {
   // The ref to know which component is loaded (init -> default)
