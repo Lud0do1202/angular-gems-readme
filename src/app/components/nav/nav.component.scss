@@ -12,6 +12,16 @@
 }
 // Nav
 :host ::ng-deep .nav-panel {
+  .p-menuitem-link, .p-panelmenu-header-action {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .p-submenu-list {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
   .p-menuitem-link-active {
     background: var(--gems-color-3);
     border-radius: var(--gems-border-radius-m) !important;
