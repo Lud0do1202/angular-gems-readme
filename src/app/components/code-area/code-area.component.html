@@ -1,6 +1,7 @@
 <div class="code-area">
   <pre><code [highlight]="code"></code></pre>
   <i
+    *ngIf="canCopy === true"
     class="pi pi-copy clipboard-btn rounded-circle"
     pTooltip="Copy"
     tooltipPosition="bottom"

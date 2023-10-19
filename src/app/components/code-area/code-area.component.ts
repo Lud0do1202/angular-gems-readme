@@ -8,6 +8,7 @@ import { ClipboardService } from 'ngx-clipboard';
 })
 export class CodeAreaComponent {
   @Input() code: string = '';
+  @Input() canCopy: boolean = true;
 
   constructor(private clipboardService: ClipboardService) {}
 

@@ -1,0 +1,45 @@
+<!-- ======================================================================= -->
+<!--                           SEARCH BAR : CUSTOM                           -->
+<!-- ======================================================================= -->
+<app-section title="Custom">
+  <!-- --------------------------- Description --------------------------- -->
+  <app-description>
+    Let your imagination create the most beautiful component
+  </app-description>
+
+  <!-- ------------------------------ Example ------------------------------ -->
+  <app-example>
+    <!-- gems-search-bar -->
+    <gems-search-bar
+      [config]="config"
+      (filtered)="users = $event"
+    ></gems-search-bar>
+
+    <div style="margin-top: 1rem">
+      <!-- users -->
+      <div *ngFor="let user of users">
+        {{ user.username }} - {{ user.email }}
+      </div>
+    </div>
+  </app-example>
+  <app-spacer></app-spacer>
+
+  <!-- ----------------------------- Code Area ----------------------------- -->
+  <!-- select -->
+  <app-select
+    [labels]="['Html', 'Typescript', 'Scss']"
+    (onChange)="codeAreaSelect = $event"
+  ></app-select>
+
+  <!-- html -->
+  <app-code-area *ngIf="codeAreaSelect === 0" [code]="html"></app-code-area>
+
+  <!-- typescript -->
+  <app-code-area
+    *ngIf="codeAreaSelect === 1"
+    [code]="typescript"
+  ></app-code-area>
+
+  <!-- scss -->
+  <app-code-area *ngIf="codeAreaSelect === 2" [code]="scss"></app-code-area>
+</app-section>

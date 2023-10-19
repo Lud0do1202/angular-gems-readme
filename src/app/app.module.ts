@@ -35,7 +35,6 @@ import { PageFoundComponent } from './pages/page-found/page-found.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { TitleComponent } from './components/title/title.component';
 import { SectionComponent } from './components/section/section.component';
-import { ClipboardBtnComponent } from './components/clipboard-btn/clipboard-btn.component';
 import { CodeAreaComponent } from './components/code-area/code-area.component';
 import { DescriptionComponent } from './components/description/description.component';
 import { SpacerComponent } from './components/spacer/spacer.component';
@@ -58,6 +57,11 @@ import { MenuYIconsBasicComponent } from './pages/components/menu/menu-y-icons/m
 import { MenuYIconsCustomComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-custom/menu-y-icons-custom.component';
 import { MenuYIconsConfigurationComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-configuration/menu-y-icons-configuration.component';
 import { MenuYIconsEventsComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-sections/menu-y-icons-events/menu-y-icons-events.component';
+import { SearchBarPageComponent } from './pages/components/search/search-bar/search-bar-page.component';
+import { SearchBarBasicComponent } from './pages/components/search/search-bar/search-bar-sections/search-bar-basic/search-bar-basic.component';
+import { SearchBarCustomComponent } from './pages/components/search/search-bar/search-bar-sections/search-bar-custom/search-bar-custom.component';
+import { SearchBarConfigurationComponent } from './pages/components/search/search-bar/search-bar-sections/search-bar-configuration/search-bar-configuration.component';
+import { SearchBarEventsComponent } from './pages/components/search/search-bar/search-bar-sections/search-bar-events/search-bar-events.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,6 @@ import { MenuYIconsEventsComponent } from './pages/components/menu/menu-y-icons/
     PageNotFoundComponent,
     TitleComponent,
     SectionComponent,
-    ClipboardBtnComponent,
     CodeAreaComponent,
     DescriptionComponent,
     SpacerComponent,
@@ -90,6 +93,11 @@ import { MenuYIconsEventsComponent } from './pages/components/menu/menu-y-icons/
     MenuYIconsCustomComponent,
     MenuYIconsConfigurationComponent,
     MenuYIconsEventsComponent,
+    SearchBarPageComponent,
+    SearchBarBasicComponent,
+    SearchBarCustomComponent,
+    SearchBarConfigurationComponent,
+    SearchBarEventsComponent,
   ],
   imports: [
     BrowserModule,

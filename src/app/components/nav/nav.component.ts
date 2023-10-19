@@ -23,17 +23,25 @@ export class NavComponent implements OnInit {
         label: 'Get Started',
         icon: 'pi pi-fw pi-home',
         ...this.expanded(['/get-started/installation']),
-        items: [{ label: 'Installation', routerLink: '/get-started/installation' }],
+        items: [
+          { label: 'Installation', routerLink: '/get-started/installation' },
+        ],
       },
       {
         label: 'Components',
         icon: 'pi pi-fw pi-compass',
-        ...this.expanded(['/components/menu/menu-x', 'components/menu/menu-y-icons']),
+        ...this.expanded([
+          '/components/menu/menu-x',
+          'components/menu/menu-y-icons',
+        ]),
         items: [
           {
             label: 'Menu',
             styleClass: 'subpanel',
-            ...this.expanded(['/components/menu/menu-x', 'components/menu/menu-y-icons']),
+            ...this.expanded([
+              '/components/menu/menu-x',
+              'components/menu/menu-y-icons',
+            ]),
             items: [
               {
                 label: 'Menu X',
@@ -42,6 +50,17 @@ export class NavComponent implements OnInit {
               {
                 label: 'Menu Y Icons',
                 routerLink: 'components/menu/menu-y-icons',
+              },
+            ],
+          },
+          {
+            label: 'Search',
+            styleClass: 'subpanel',
+            ...this.expanded(['/components/search/search-bar']),
+            items: [
+              {
+                label: 'Search Bar',
+                routerLink: '/components/search/search-bar',
               },
             ],
           },

@@ -11,22 +11,25 @@ export class MenuYIconsConfigurationComponent {
   props: PropRow[] = [
     {
       name: 'links',
-      type: 'string[]',
-      default: '[]',
-      description: 'The labels of the links',
+      code: `/**
+* The labels of the links
+*/
+links: string[] = [];`,
     },
     {
       name: 'defaultActiveLink',
-      type: 'number',
-      default: '0',
-      description: 'The default link which is active',
+      code: `/**
+* The default link which is active
+*/
+defaultActiveLink: number = 0;`,
     },
     {
       name: 'styleId',
-      type: 'string | undefined',
-      default: "' '",
-      description: 'The id css for the component',
-      comment: 'It can be used several times',
+      code: `/**
+* The id css for the component
+* @info It can be used several times
+*/
+styleId?: string = undefined;`,
     },
   ];
 }

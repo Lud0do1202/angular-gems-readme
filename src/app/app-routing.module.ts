@@ -7,6 +7,7 @@ import { InstallationPageComponent } from './pages/get-started/installation/inst
 import { DonationPageComponent } from './pages/more/donation/donation-page.component';
 import { RepositoryPageComponent } from './pages/more/repository/repository-page.component';
 import { MenuYIconsPageComponent } from './pages/components/menu/menu-y-icons/menu-y-icons-page.component';
+import { SearchBarPageComponent } from './pages/components/search/search-bar/search-bar-page.component';
 
 const routes: Routes = [
   // Default
@@ -18,12 +19,21 @@ const routes: Routes = [
     component: PageFoundComponent,
     children: [
       // Get Started
-      { path: 'get-started/installation', component: InstallationPageComponent },
+      {
+        path: 'get-started/installation',
+        component: InstallationPageComponent,
+      },
 
       // Component
       { path: 'components/menu/menu-x', component: MenuXPageComponent },
-      { path: 'components/menu/menu-y-icons', component : MenuYIconsPageComponent},
-      // { path: 'components/data/search-bar'}
+      {
+        path: 'components/menu/menu-y-icons',
+        component: MenuYIconsPageComponent,
+      },
+      {
+        path: 'components/search/search-bar',
+        component: SearchBarPageComponent,
+      },
 
       // More
       { path: 'more/donation', component: DonationPageComponent },

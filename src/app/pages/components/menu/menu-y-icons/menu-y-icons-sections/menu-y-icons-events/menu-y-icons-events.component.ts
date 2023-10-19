@@ -11,9 +11,11 @@ export class MenuYIconsEventsComponent {
   events: EventRow[] = [
     {
       name: '(onLinkClicked)',
-      type: 'number',
-      description: ' The event emited when a link is clicked',
-      comment: 'We must update the loaded property (loaded = $event)',
+      code: `/**
+* The event emited when a link is clicked
+* @returns the index of link clicked
+*/
+@Output() onLinkClicked = new EventEmitter<number>();`,
     },
   ];
 }

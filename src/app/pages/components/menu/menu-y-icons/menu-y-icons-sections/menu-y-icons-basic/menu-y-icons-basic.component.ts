@@ -44,7 +44,7 @@ export class MenuYIconsBasicComponent {
   // Typescript
   typescript: string = `import { MenuYIconsConfig } from '@lud0do1202/angular-gems';
   
-export class DemoMenuXComponent {
+export class DemoMenuYIconsComponent {
   // The ref to know which component is loaded (init -> default)
   loaded: number = 0;
 

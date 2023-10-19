@@ -1,68 +1,46 @@
 /* ========================================================================== */
-/*                             CUSTOM MENU Y ICONS                            */
+/*                              CUSTOM SEARCH BAR                             */
 /* ========================================================================== */
-:host ::ng-deep #custom-menu-y-icons {
-  &.gems-menu-y-icons {
-    background-color: #d4b254;
+:host ::ng-deep #custom-search-bar {
+  &.gems-search-bar {
+    border: 1px solid red;
+    color: lightblue;
 
-    /* -------------------------------- <ul> -------------------------------- */
-    .gems-list {
-      /* ------------------------------- <li> ------------------------------- */
-      .gems-item {
-        /* ----------------- <li class="gems-electron-item"> ---------------- */
-        &.gems-electron-item {
-          /* ------------------------------ <a> ----------------------------- */
-          .gems-link {
-            background-color: #d47522;
-          }
-        }
+    // Input focused
+    &:focus-within {
+      border: 2px dashed purple;
+      outline: 2px solid pink;
+      color: orangered;
+    }
 
-        /* ----------------------- <li class="active"> ---------------------- */
-        &.active {
-          /* ------------------------------ <a> ----------------------------- */
-          .gems-link {
-            color: #000;
-          }
-        }
+    /* ------------------------------- <label> ------------------------------ */
+    .gems-label-search-bar {
+      font-size: 1rem;
 
-        /* ------------------------------- <a> ------------------------------ */
-        .gems-link {
-          color: #8e0391;
-          transition: 0.5s;
+      /* ------------ <label class="gems-label-search-bar-left"> ------------ */
+      &.gems-label-search-bar-left {
+        background-color: #ff000080;
+      }
 
-          // Hover
-          &:hover {
-            cursor: crosshair;
-            border: 1px solid #5662e1;
-            color: #8e039155;
-          }
-        }
+      /* ------------ <label class="gems-label-search-bar-right"> ----------- */
+      &.gems-label-search-bar-right {
+        background-color: #00ff0080;
       }
     }
 
-    /* --------------------- <li class="gems-item-1"> --------------------- */
-    .gems-item-1 {
-      /* ----------------- <li class="gems-electron-item"> ---------------- */
-      &.gems-electron-item {
-        /* ------------------------------- <a> ------------------------------ */
-        .gems-link {
-          background-color: rgb(74, 230, 62);
-        }
+    /* ------------------------------- <input> ------------------------------ */
+    .gems-input-search-bar {
+      font-size: 1rem;
+      color: green;
+
+      // Placeholder
+      &::placeholder {
+        color: black;
       }
 
-      /* ----------------------- <li class="active"> ---------------------- */
-      &.active {
-        /* ------------------------------ <a> ----------------------------- */
-        .gems-link {
-          color: rgb(200, 240, 119);
-          background-color: transparent;
-        }
-      }
-
-      /* ------------------------------- <a> ------------------------------ */
-      .gems-link {
-        background-color: rgb(213, 22, 53);
-        color: rgb(3, 103, 243);
+      // Focus
+      &:focus {
+        color: brown;
       }
     }
   }

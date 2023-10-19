@@ -1,0 +1,42 @@
+<!-- ======================================================================= -->
+<!--                           SEARCH BAR : BASIC                            -->
+<!-- ======================================================================= -->
+<app-section title="Basic">
+  <!-- --------------------------- Description --------------------------- -->
+  <app-description>
+    A basic example of <strong>&lt;gems-search-bar></strong>
+  </app-description>
+
+  <!-- ------------------------------ Example ------------------------------ -->
+  <app-example>
+    <!-- gems-search-bar -->
+    <gems-search-bar
+      [config]="config"
+      (filtered)="users = $event"
+    ></gems-search-bar>
+
+    <!-- users -->
+    <div style="margin-top: 1rem">
+      <div *ngFor="let user of users">
+        {{ user.username }} - {{ user.email }}
+      </div>
+    </div>
+  </app-example>
+  <app-spacer></app-spacer>
+
+  <!-- ----------------------------- Code Area ----------------------------- -->
+  <!-- select -->
+  <app-select
+    [labels]="['Html', 'Typescript']"
+    (onChange)="codeAreaSelect = $event"
+  ></app-select>
+
+  <!-- html -->
+  <app-code-area *ngIf="codeAreaSelect === 0" [code]="html"></app-code-area>
+
+  <!-- typescript -->
+  <app-code-area
+    *ngIf="codeAreaSelect === 1"
+    [code]="typescript"
+  ></app-code-area>
+</app-section>
