@@ -24,7 +24,7 @@
     "ngx-highlightjs": "^9.0.0",
     "ngx-paypal": "^11.0.0",
     "primeicons": "^6.0.1",
-    "primeng": "^16.5.1",
+    "primeng": "^16.2.10",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
