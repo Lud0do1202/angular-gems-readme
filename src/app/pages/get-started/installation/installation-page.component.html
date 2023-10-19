@@ -3,44 +3,15 @@
 
 <!-- Version -->
 <app-section [title]="'Versions'">
-  <app-description>
-    <span class="package-name">Angular Gems</span> : <strong>1.3.0</strong>
-  </app-description>
-  <app-description>
-    <span class="package-name">Angular CLI</span> : <strong>16.2.7</strong>
-  </app-description>
-  <app-description>
-    <span class="package-name">Node</span> : <strong>18.16.0</strong>
-  </app-description>
-  <app-description>
-    <span class="package-name">Npm</span> : <strong>9.5.1</strong>
-  </app-description>
+  <app-description> <span class="package-name">Angular Gems</span> : <strong>1.3.0</strong> </app-description>
+  <app-description> <span class="package-name">Angular CLI</span> : <strong>16.2.7</strong> </app-description>
+  <app-description> <span class="package-name">Node</span> : <strong>18.16.0</strong> </app-description>
+  <app-description> <span class="package-name">Npm</span> : <strong>9.5.1</strong> </app-description>
 </app-section>
-
-<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" styleClass="p-datatable-lg p-datatable-gridlines">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Quantity</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-product>
-    <tr>
-      <td>{{ product.code }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.category }}</td>
-      <td>{{ product.quantity }}</td>
-    </tr>
-  </ng-template>
-</p-table>
 
 <!-- Download -->
 <app-section [title]="'Download'">
-  <app-description>
-    Use <strong>npm</strong> to be able to use Angular Gems
-  </app-description>
+  <app-description> Use <strong>npm</strong> to be able to use Angular Gems </app-description>
   <app-code-area [code]="download"></app-code-area>
 </app-section>
 

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class InstallationPageComponent {
   // Title
   title: string = 'Installation';
-  description: string = 'Angular Gems has a range of useful components for you';
+  description: string = 'Angular Gems contains nice components for you to be use';
 
   // Download
   download: string = 'npm i @lud0do1202/angular-gems';
@@ -32,25 +32,4 @@ export class AppModule {}`;
     "node_modules/@lud0do1202/angular-gems/styles/gems-light.css"
   ]
 }`;
-
-  products = [
-    {
-      code: 'code 1',
-      name: 'name 1',
-      category: 'category 1',
-      quantity: 'quantity 1',
-    },
-    {
-      code: 'code 2',
-      name: 'name 2',
-      category: 'category 2',
-      quantity: 'quantity 2',
-    },
-    {
-      code: 'code 3',
-      name: 'name 3',
-      category: 'category 3',
-      quantity: 'quantity 3',
-    },
-  ];
 }
