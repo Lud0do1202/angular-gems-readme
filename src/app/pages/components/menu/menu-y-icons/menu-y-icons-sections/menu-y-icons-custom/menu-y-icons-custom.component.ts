@@ -78,6 +78,7 @@ export class DemoMenuyIconsComponent {
       .gems-item {
         /* ----------------- <li class="gems-electron-item"> ---------------- */
         &.gems-electron-item {
+          transition: 1s;
           /* ------------------------------ <a> ----------------------------- */
           .gems-link {
             background-color: #d47522;
@@ -95,7 +96,7 @@ export class DemoMenuyIconsComponent {
         /* ------------------------------- <a> ------------------------------ */
         .gems-link {
           color: #8e0391;
-          transition: 0.5s;
+          transition: 1s;
 
           // Hover
           &:hover {

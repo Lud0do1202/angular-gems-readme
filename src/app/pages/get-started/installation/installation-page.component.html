@@ -2,27 +2,43 @@
 <app-title [title]="title" [description]="description"></app-title>
 
 <!-- Version -->
-<app-section [title]="'Versions'">
-  <app-description> <span class="package-name">Angular Gems</span> : <strong>1.2.1</strong> </app-description>
-  <app-description> <span class="package-name">Angular CLI</span> : <strong>16.1.1</strong> </app-description>
-  <app-description> <span class="package-name">Node</span> : <strong>18.16.0</strong> </app-description>
-  <app-description> <span class="package-name">Npm</span> : <strong>9.5.1</strong> </app-description>
+<app-section title="Versions">
+  <app-description>
+    I use the cmd <strong>ng version</strong> to have those infos
+  </app-description>
+  <app-description>
+    <span class="package-name">Angular Gems</span> : <strong>1.3.1</strong>
+  </app-description>
+  <app-description>
+    <span class="package-name">Angular CLI</span> : <strong>16.1.8</strong>
+  </app-description>
+  <app-description>
+    <span class="package-name">Node</span> : <strong>18.16.0</strong>
+  </app-description>
+  <app-description>
+    <span class="package-name">Npm</span> : <strong>9.5.1</strong>
+  </app-description>
+  <app-description>
+    <span class="package-name">Angular</span> : <strong>16.1.1</strong>
+  </app-description>
 </app-section>
 
 <!-- Download -->
-<app-section [title]="'Download'">
-  <app-description> Use <strong>npm</strong> to be able to use Angular Gems </app-description>
+<app-section title="Download">
+  <app-description>
+    Use <strong>npm</strong> to be able to use Angular Gems
+  </app-description>
   <app-code-area [code]="download"></app-code-area>
 </app-section>
 
 <!-- Import module -->
-<app-section [title]="'Import module'">
+<app-section title="Import module">
   <app-description> <strong>app.module.ts</strong> </app-description>
   <app-code-area [code]="appModule"></app-code-area>
 </app-section>
 
 <!-- Style -->
-<app-section [title]="'Style'">
+<app-section title="Style">
   <app-description> <strong>angular.json</strong> </app-description>
   <app-code-area [code]="angularJson"></app-code-area>
 </app-section>
