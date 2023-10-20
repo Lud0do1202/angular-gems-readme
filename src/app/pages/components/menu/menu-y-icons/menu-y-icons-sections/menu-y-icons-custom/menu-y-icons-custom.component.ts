@@ -14,7 +14,7 @@ export class MenuYIconsCustomComponent {
   // The config
   config: MenuYIconsConfig = {
     // The icons of the links
-    icons: ['pi pi-github', 'pi pi-npm', 'pi pi-paypal', 'pi pi-qrcode'],
+    icons: ['pi pi-github', 'pi pi-google', 'pi pi-paypal', 'pi pi-qrcode'],
 
     // Set the default link
     defaultActiveLink: this.loaded,
@@ -54,7 +54,7 @@ export class DemoMenuyIconsComponent {
   // The config
   config: MenuYIconsConfig = {
     // The icons of the links
-    icons: ['pi pi-github', 'pi pi-npm', 'pi pi-paypal', 'pi pi-qrcode'],
+    icons: ['pi pi-github', 'pi pi-google', 'pi pi-paypal', 'pi pi-qrcode'],
 
     // Set the default link
     defaultActiveLink: this.loaded,
