@@ -13,8 +13,8 @@ export class MenuYIconsBasicComponent {
 
   // The config
   config: MenuYIconsConfig = {
-    // The labels of the links
-    links: ['Javascript', 'Html/CSS', 'Java', 'Python'],
+    // The icons of the links
+    icons: ['pi pi-github', 'pi pi-npm', 'pi pi-paypal', 'pi pi-qrcode'],
 
     // Set the default link
     defaultActiveLink: this.loaded,
@@ -50,8 +50,8 @@ export class DemoMenuYIconsComponent {
 
   // The config
   config: MenuYIconsConfig = {
-    // The labels of the links
-    links: ['Javascript', 'Html/CSS', 'Java', 'Python'],
+    // The icons of the links
+    icons: ['pi pi-github', 'pi pi-npm', 'pi pi-paypal', 'pi pi-qrcode'],
 
     // Set the default link
     defaultActiveLink: this.loaded,

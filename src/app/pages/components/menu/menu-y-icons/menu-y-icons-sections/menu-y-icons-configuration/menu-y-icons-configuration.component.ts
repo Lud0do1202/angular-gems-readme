@@ -12,9 +12,9 @@ export class MenuYIconsConfigurationComponent {
     {
       name: 'links',
       code: `/**
-* The labels of the links
+* The icons of the links
 */
-links: string[] = [];`,
+icons: string[] = [];`,
     },
     {
       name: 'defaultActiveLink',
