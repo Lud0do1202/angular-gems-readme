@@ -1,0 +1,47 @@
+/* ========================================================================== */
+/*                              CUSTOM SEARCH BAR                             */
+/* ========================================================================== */
+:host ::ng-deep #custom-search-bar {
+  &.gems-search-bar {
+    border: 1px solid red;
+    color: lightblue;
+
+    // Input focused
+    &:focus-within {
+      border: 2px dashed purple;
+      outline: 2px solid pink;
+      color: orangered;
+    }
+
+    /* ------------------------------- <label> ------------------------------ */
+    .gems-label-search-bar {
+      font-size: 1rem;
+
+      /* ------------ <label class="gems-label-search-bar-left"> ------------ */
+      &.gems-label-search-bar-left {
+        background-color: #ff000080;
+      }
+
+      /* ------------ <label class="gems-label-search-bar-right"> ----------- */
+      &.gems-label-search-bar-right {
+        background-color: #00ff0080;
+      }
+    }
+
+    /* ------------------------------- <input> ------------------------------ */
+    .gems-input-search-bar {
+      font-size: 1rem;
+      color: green;
+
+      // Placeholder
+      &::placeholder {
+        color: black;
+      }
+
+      // Focus
+      &:focus {
+        color: brown;
+      }
+    }
+  }
+}
